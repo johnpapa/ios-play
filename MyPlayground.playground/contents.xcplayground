@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='classes'/>
+        <page name='general'/>
+        <page name='drawing'/>
+        <page name='arrays'/>
+        <page name='functions'/>
+        <page name='enums'/>
+        <page name='image'/>
+        <page name='closure'/>
+    </pages>
+</playground>
