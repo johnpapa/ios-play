@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
   // ************************************
   // INSTRUCTIONS
-  // list of disney resorts
+  // list of resorts
   // date must be between now and 1 year out
   // picker chooses a resort
   // label that changes when the user chooses a resort and date
