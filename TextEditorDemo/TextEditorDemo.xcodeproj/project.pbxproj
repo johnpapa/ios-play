@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F9B923A81D4BAEC300D93EB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B923A71D4BAEC300D93EB3 /* AppDelegate.swift */; };
-		F9B923AA1D4BAEC300D93EB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B923A91D4BAEC300D93EB3 /* ViewController.swift */; };
+		F9B923A81D4BAEC300D93EB3 /* TextEditorDemo in Sources */ = {isa = PBXBuildFile; fileRef = F9B923A71D4BAEC300D93EB3 /* TextEditorDemo */; };
+		F9B923AA1D4BAEC300D93EB3 /* TextEditorDemo in Sources */ = {isa = PBXBuildFile; fileRef = F9B923A91D4BAEC300D93EB3 /* TextEditorDemo */; };
 		F9B923AD1D4BAEC300D93EB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B923AB1D4BAEC300D93EB3 /* Main.storyboard */; };
 		F9B923AF1D4BAEC300D93EB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B923AE1D4BAEC300D93EB3 /* Assets.xcassets */; };
 		F9B923B21D4BAEC300D93EB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B923B01D4BAEC300D93EB3 /* LaunchScreen.storyboard */; };
@@ -19,15 +19,15 @@
 
 /* Begin PBXFileReference section */
 		F9B923A41D4BAEC300D93EB3 /* TextEditorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextEditorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9B923A71D4BAEC300D93EB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9B923A91D4BAEC300D93EB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9B923A71D4BAEC300D93EB3 /* TextEditorDemo */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextEditorDemo; sourceTree = "<group>"; };
+		F9B923A91D4BAEC300D93EB3 /* TextEditorDemo */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextEditorDemo; sourceTree = "<group>"; };
 		F9B923AC1D4BAEC300D93EB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F9B923AE1D4BAEC300D93EB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9B923AE1D4BAEC300D93EB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TextEditorDemo/Assets.xcassets; sourceTree = "<group>"; };
 		F9B923B11D4BAEC300D93EB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F9B923B31D4BAEC300D93EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9B923B91D4BB11100D93EB3 /* ResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
-		F9B923BB1D4BB12A00D93EB3 /* FontsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsController.swift; sourceTree = "<group>"; };
-		F9B923BD1D4BB14600D93EB3 /* InputText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputText.swift; sourceTree = "<group>"; };
+		F9B923B31D4BAEC300D93EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = TextEditorDemo/Info.plist; sourceTree = "<group>"; };
+		F9B923B91D4BB11100D93EB3 /* ResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultController.swift; path = TextEditorDemo/ResultController.swift; sourceTree = "<group>"; };
+		F9B923BB1D4BB12A00D93EB3 /* FontsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontsController.swift; path = TextEditorDemo/FontsController.swift; sourceTree = "<group>"; };
+		F9B923BD1D4BB14600D93EB3 /* InputText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputText.swift; path = TextEditorDemo/InputText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 		F9B923A61D4BAEC300D93EB3 /* TextEditorDemo */ = {
 			isa = PBXGroup;
 			children = (
-				F9B923A71D4BAEC300D93EB3 /* AppDelegate.swift */,
-				F9B923A91D4BAEC300D93EB3 /* ViewController.swift */,
+				F9B923A71D4BAEC300D93EB3 /* TextEditorDemo */,
+				F9B923A91D4BAEC300D93EB3 /* TextEditorDemo */,
 				F9B923AB1D4BAEC300D93EB3 /* Main.storyboard */,
 				F9B923AE1D4BAEC300D93EB3 /* Assets.xcassets */,
 				F9B923B01D4BAEC300D93EB3 /* LaunchScreen.storyboard */,
@@ -145,8 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9B923AA1D4BAEC300D93EB3 /* ViewController.swift in Sources */,
-				F9B923A81D4BAEC300D93EB3 /* AppDelegate.swift in Sources */,
+				F9B923AA1D4BAEC300D93EB3 /* TextEditorDemo in Sources */,
+				F9B923A81D4BAEC300D93EB3 /* TextEditorDemo in Sources */,
 				F9B923BE1D4BB14600D93EB3 /* InputText.swift in Sources */,
 				F9B923BC1D4BB12A00D93EB3 /* FontsController.swift in Sources */,
 				F9B923BA1D4BB11100D93EB3 /* ResultController.swift in Sources */,
@@ -301,6 +301,7 @@
 				F9B923B81D4BAEC300D93EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
