@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  TextEditorSample
+//  TextEditorDemo
 //
-//  Created by Clark, Brian on 7/29/16.
-//  Copyright © 2016. All rights reserved.
+//  Created by Clark, Brian P. on 7/29/16.
+//
 //
 
 import UIKit

@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  TextEditorSample
+//  TextEditorDemo
 //
-//  Created by Clark, Brian on 7/29/16.
-//  Copyright © 2016. All rights reserved.
+//  Created by Clark, Brian P. on 7/29/16.
+//
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var inputTextView:UITextView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,6 +41,5 @@ class ViewController: UIViewController {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         print("\(#function) first view controller")
-    }
-}
+    }}
 
