@@ -11,5 +11,7 @@
         <page name='closure'/>
         <page name='property setters'/>
         <page name='extensions'/>
+        <page name='tuples'/>
+        <page name='dict'/>
     </pages>
 </playground>
