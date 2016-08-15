@@ -19,6 +19,9 @@ let ordinals = [
   3: "third"
 ]
 
+print(ordinals[1]!)
+print(ordinals[2]!)
+print(ordinals[3]!)
 
 let namesDict = [
   "John": "Papa",
