@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 func logIt(msg: String = "fake log") {
   print(msg)
@@ -29,6 +30,12 @@ turnStuffOnOrOff(100)
 turnStuffOnOrOff(50)
 
 print("*** Function with optionals")
+
+var normal = 1;
+var optional: Int? = 2;
+var optional2: Optional<Int> = 2;
+var implicitlyUnwrappedOptional: Int! = 3;
+var implicitlyUnwrappedOptional2: ImplicitlyUnwrappedOptional<Int> = 3;
 
 var temp2:Float? = nil
 var thermostat2:Float? = nil
@@ -168,5 +175,15 @@ func retire(startingAmt: Double, years: Int) -> Double {
 
 print(retire(1000, years: 10))
 
+
+
+print("optional quiz")
+var color: UIColor? = nil
+//color = UIColor.redColor()
+
+//let colorA = color!
+let colorB = color?.CGColor
+//print(colorA)
+print(colorB)
 
 
