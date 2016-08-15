@@ -1,7 +1,16 @@
-//: [Previous](@previous)
-
+import UIKit
 import Foundation
 
-var str = "Hello, playground"
+// We can extend any class with our own functionality
 
-//: [Next](@next)
+extension String {
+  var reverse: String {
+    var result = ""
+    for character in self.characters.reverse() {
+      result.append(character)
+    }
+    return result
+  }
+}
+
+"Chris".reverse

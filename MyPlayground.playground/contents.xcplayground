@@ -9,5 +9,7 @@
         <page name='enums'/>
         <page name='image'/>
         <page name='closure'/>
+        <page name='property setters'/>
+        <page name='extensions'/>
     </pages>
 </playground>
