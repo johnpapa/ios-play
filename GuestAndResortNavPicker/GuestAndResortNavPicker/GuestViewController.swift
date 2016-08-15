@@ -24,12 +24,6 @@ class GuestViewController: UIViewController {
   @IBOutlet var guestTextField: UITextField!
   @IBOutlet var resortTextField: UITextField!
   
-  @IBAction func nextButton(sender: UIButton) {
-    GuestInfo.currentGuest.guestName = guestTextField.text
-    GuestInfo.currentGuest.resortName = resortTextField.text
-    print(GuestInfo.currentGuest.guestName)
-  }
-
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
@@ -38,9 +32,20 @@ class GuestViewController: UIViewController {
     if let guest = GuestInfo.currentGuest.guestName {
       guestTextField.text = guest
     }
+
     if let resort = GuestInfo.currentGuest.resortName {
       resortTextField.text = resort
     }
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    print("Guest View Will Disappear was called")
+
+    GuestInfo.currentGuest.guestName = guestTextField.text
+    GuestInfo.currentGuest.resortName = resortTextField.text
+    print(GuestInfo.currentGuest.guestName)
   }
   
   override func viewDidLoad() {

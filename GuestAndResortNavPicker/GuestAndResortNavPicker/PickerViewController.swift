@@ -65,7 +65,7 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     let resort = resorts[row]
     print("resorts[row] = \(resort)")
     formatMessage()
-    setResort(resort)
+//    GuestInfo.currentGuest.resortName = resorts[resortPicker!.selectedRowInComponent(0)]
   }
   
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -80,12 +80,15 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     print(msg)
   }
   
-  func setResort(resort: String) {
-    GuestInfo.currentGuest.resortName = resort
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    print("Picker View Will Disappear was called")
+    
+    GuestInfo.currentGuest.guestName = guestText.text
+    GuestInfo.currentGuest.resortName = resorts[resortPicker!.selectedRowInComponent(0)]
   }
 
-
-  
   
   
   // UITextField Delegates
@@ -104,14 +107,14 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     return true;
   }
   func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-    print("TextField should snd editing method called")
+    print("TextField should end editing method called")
     return true;
   }
   func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
     print("While entering the characters this method gets called")
-    let guest = guestText.text
-    GuestInfo.currentGuest.guestName = guest
-    print("Guest name changed to \(guest)")
+//    let guest = guestText.text
+//    GuestInfo.currentGuest.guestName = guest
+//    print("Guest name changed to \(string)")
     return true;
   }
   func textFieldShouldReturn(textField: UITextField) -> Bool {
