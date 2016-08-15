@@ -14,3 +14,12 @@ extension String {
 }
 
 "Chris".reverse
+
+extension NSDate {
+  func yearsSinceReferenceDate() -> NSTimeInterval {
+    // bad calc :-)
+    return self.timeIntervalSinceReferenceDate / (3600*24*365)
+  }
+}
+let now = NSDate()
+print("\(now.yearsSinceReferenceDate()) since ref date")
