@@ -87,7 +87,12 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
   }
 
   var selectedResort : String {
-    get { return resorts[resortPicker!.selectedRowInComponent(0)] }
+    return resorts[resortPicker!.selectedRowInComponent(0)]
+    
+    // Longer syntax for getter is below
+//    get { return resorts[resortPicker!.selectedRowInComponent(0)] }
+    
+    // setter has an implicit "newValue" so you can get the new value
   }
   
   // UITextField Delegates
