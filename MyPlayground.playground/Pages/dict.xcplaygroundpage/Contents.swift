@@ -19,3 +19,15 @@ let ordinals = [
   3: "third"
 ]
 
+
+let namesDict = [
+  "John": "Papa",
+  "Brian": "Clark",
+  "Pam": "Dale"
+]
+
+let namesArray: [String] = namesDict.map { (f, l) -> String in
+  return "\(f) \(l)"
+}
+
+print(namesArray)
