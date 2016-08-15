@@ -205,15 +205,30 @@ class Guest {
   }
 
   var fullName: String {
-    switch (first, last) {
-      case (.None, .Some(let last)):
-        return last
-      case (.Some(let first), .None):
-        return first
-      case (.Some(let first), .Some(let last)):
-        return "\(first) \(last)"
+    get {
+      switch (first, last) {
+        case (.None, .Some(let last)):
+          return last
+        case (.Some(let first), .None):
+          return first
+        case (.Some(let first), .Some(let last)):
+          return "\(first) \(last)"
+        default:
+          return ""
+      }
+    }
+    set {
+      let names = newValue.componentsSeparatedByString(" ")
+      switch names.count {
+      case 1:
+        self.first = names[0]
+      case 2:
+        self.first = names[0]
+        self.last = names[1]
       default:
-        return ""
+        self.first = names.first
+        self.last = names.last
+      }
     }
   }
 
@@ -233,4 +248,7 @@ print("string fullName = \(g.fullName)")
 print(g.full.firstName + " " + g.full.lastName)
 
 
+g.fullName = "Brian Clark"
+print("tuple full = \(g.full)")
+print("string fullName = \(g.fullName)")
 
