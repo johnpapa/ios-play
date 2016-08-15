@@ -26,10 +26,7 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     if let resort = GuestInfo.currentGuest.resortName {
       
       let i = resorts.indexOf(resort) ?? 0
-      
       resortPicker.selectRow(i, inComponent: 0, animated: true)
-
-//      resorts[resortPicker!.selectedRowInComponent(0)] = resort
     }
 
     //    self.resortPicker.dataSource = self;
@@ -65,7 +62,7 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     let resort = resorts[row]
     print("resorts[row] = \(resort)")
     formatMessage()
-//    GuestInfo.currentGuest.resortName = resorts[resortPicker!.selectedRowInComponent(0)]
+//    GuestInfo.currentGuest.resortName = selectedResort
   }
   
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -74,7 +71,7 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
   }
   
   func formatMessage() {
-    let resort = resorts[resortPicker!.selectedRowInComponent(0)]
+    let resort = selectedResort
     
     let msg = "\(resort) was selected"
     print(msg)
@@ -86,10 +83,12 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     print("Picker View Will Disappear was called")
     
     GuestInfo.currentGuest.guestName = guestText.text
-    GuestInfo.currentGuest.resortName = resorts[resortPicker!.selectedRowInComponent(0)]
+    GuestInfo.currentGuest.resortName = selectedResort
   }
 
-  
+  var selectedResort : String {
+    get { return resorts[resortPicker!.selectedRowInComponent(0)] }
+  }
   
   // UITextField Delegates
   func textFieldDidBeginEditing(textField: UITextField) {
