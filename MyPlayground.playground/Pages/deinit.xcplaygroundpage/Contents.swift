@@ -20,5 +20,8 @@ landon?.name = "Landon"
 me?.kids = [landon!]
 //landon?.dad = me
 
-//landon = nil
+print("wiping landon")
+landon = nil
+
+print("wiping me")
 me = nil
