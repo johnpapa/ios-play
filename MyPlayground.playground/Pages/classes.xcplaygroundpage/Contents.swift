@@ -185,3 +185,35 @@ class myRecognizer : UITapGestureRecognizer {
 }
 
 var myRec1 = myRecognizer()
+
+// Classes with getter/setter and tuples
+
+class Guest {
+  var first: String?
+  var last: String?
+  
+  var full: (firstName: String, lastName: String) {
+    get {
+      let f = first ?? ""
+      let l = last ?? ""
+      return (f, l)
+    }
+    set {
+      self.first = newValue.0
+      self.last = newValue.1
+    }
+  }
+
+}
+print("Optionals and a computed getter")
+var g = Guest()
+print(g.full)
+g.first = "John"
+print(g.full)
+g.last = "Papa"
+print(g.full)
+
+print(g.full.firstName + " " + g.full.lastName)
+
+
+
