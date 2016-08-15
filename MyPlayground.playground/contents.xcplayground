@@ -2,6 +2,7 @@
 <playground version='6.0' target-platform='ios'>
     <pages>
         <page name='classes'/>
+        <page name='deinit'/>
         <page name='general'/>
         <page name='drawing'/>
         <page name='arrays'/>
@@ -13,5 +14,6 @@
         <page name='extensions'/>
         <page name='tuples'/>
         <page name='dict'/>
+        <page name='exception handling'/>
     </pages>
 </playground>

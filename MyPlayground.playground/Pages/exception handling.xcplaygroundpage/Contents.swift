@@ -16,7 +16,7 @@ func tryToWriteToFile(path: String, data: String) -> Bool {
 //    try data?.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
     return true
   }
-  catch let error as NSError {
+  catch (let error as NSError) {
     print("Error saving file at path: \(path) with error: \(error)")
   }
   return false

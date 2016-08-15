@@ -17,6 +17,10 @@ class Customer {
     self.name = name!
     self.city = city!
   }
+  
+  deinit {
+    print("i am being deallocated")
+  }
 }
 
 var c1 = Customer(name: "John", city: "Windermere")
@@ -251,4 +255,6 @@ print(g.full.firstName + " " + g.full.lastName)
 g.fullName = "Brian Clark"
 print("tuple full = \(g.full)")
 print("string fullName = \(g.fullName)")
+
+
 
