@@ -19,10 +19,7 @@ class Table_VC: UITableViewController { // , UITableViewDelegate, UITableViewDat
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    print("i am here")
-    
-    
+        
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = false
     
