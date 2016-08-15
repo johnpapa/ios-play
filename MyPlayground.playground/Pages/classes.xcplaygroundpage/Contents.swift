@@ -189,8 +189,8 @@ var myRec1 = myRecognizer()
 // Classes with getter/setter and tuples
 
 class Guest {
-  var first: String?
-  var last: String?
+  var first: String? = nil
+  var last: String? = nil
   
   var full: (firstName: String, lastName: String) {
     get {
@@ -204,14 +204,31 @@ class Guest {
     }
   }
 
+  var fullName: String {
+    switch (first, last) {
+      case (.None, .Some(let last)):
+        return last
+      case (.Some(let first), .None):
+        return first
+      case (.Some(let first), .Some(let last)):
+        return "\(first) \(last)"
+      default:
+        return ""
+    }
+  }
+
+  
 }
 print("Optionals and a computed getter")
 var g = Guest()
-print(g.full)
+print("tuple full = \(g.full)")
+print("string fullName = \(g.fullName)")
 g.first = "John"
-print(g.full)
+print("tuple full = \(g.full)")
+print("string fullName = \(g.fullName)")
 g.last = "Papa"
-print(g.full)
+print("tuple full = \(g.full)")
+print("string fullName = \(g.fullName)")
 
 print(g.full.firstName + " " + g.full.lastName)
 
