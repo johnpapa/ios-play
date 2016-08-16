@@ -1,4 +1,5 @@
 import UIKit
+import XCPlayground
 
 ////////////////////////////////
 // Math
@@ -147,6 +148,7 @@ func delayIt() {
     print("We are delayed!")
   }
 }
+
 
 
 

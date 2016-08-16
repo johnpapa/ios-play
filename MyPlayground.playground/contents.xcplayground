@@ -15,5 +15,6 @@
         <page name='tuples'/>
         <page name='dict'/>
         <page name='exception handling'/>
+        <page name='networking'/>
     </pages>
 </playground>
