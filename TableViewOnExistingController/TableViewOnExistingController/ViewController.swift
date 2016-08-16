@@ -71,9 +71,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var idx: Int = 0
     
     if indexPath.section == 1 {
+      // gets all rows after the first 2
       idx = 2 + indexPath.row
     } else {
-      // this is section  0
+      // this is section  0. it always has 2 rows.
       idx = indexPath.row
     }
     
