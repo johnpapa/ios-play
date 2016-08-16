@@ -12,17 +12,17 @@ class ViewController: UIViewController {
   
   @IBOutlet var okButton: UIButton!
   @IBOutlet var outputTextview: UITextView!
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
+  
   @IBAction func getData(sender: UIButton) {
     // http://rss.itunes.apple.com/us/?urlDesc=%2Fgenerator
     let url = NSURL(string: "https://itunes.apple.com/us/rss/topgrossingapplications/limit=2/json")!
@@ -66,28 +66,27 @@ class ViewController: UIViewController {
               self.outputTextview.text = feed
             }
             
-            if let dict = json["feed"] as? NSDictionary {
-              print(dict["entry"])
-              if let entries = dict["entry"] as? NSArray {
-                for entry in entries {
-                  if let entryDict = entry as? NSDictionary {
-                    if let titleDict = entryDict["title"] as? NSDictionary {
-                      if let label = titleDict["label"] as? String {
-                        print("*** label = \(label ?? " ")")
-                      }
-                    }
-                  }
-                }
-              }
+            guard let dict = json["feed"] as? NSDictionary else { return }
+            guard let entries = dict["entry"] as? NSArray else { return }
+            
+            print(dict["entry"])
+            
+            for entry in entries {
+              guard let entryDict = entry as? NSDictionary else { continue }
+              
+              guard let titleDict = entryDict["title"] as? NSDictionary else { continue }
+              
+              guard let label = titleDict["label"] as? String else { continue }
+              
+              print("*** label = \(label ?? " ")")
             }
+            
           }
         }
       }
-
     }
     task.resume()
   }
-  
   
   func parseJson(data: NSData) -> [String: AnyObject]? {
     let options = NSJSONReadingOptions()
@@ -106,6 +105,6 @@ class ViewController: UIViewController {
     }
     return nil
   }
-
+  
 }
 
