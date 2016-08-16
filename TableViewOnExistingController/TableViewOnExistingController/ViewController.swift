@@ -8,24 +8,6 @@
 
 import UIKit
 
-extension String {
-  func toCGFloat() -> CGFloat {
-    return CGFloat(Float(self)!)
-  }
-}
-
-extension UIColor {
-  var components: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-    var r, g, b, a: CGFloat
-    r = 0.0
-    g = 0.0
-    b = 0.0
-    a = 0.0
-    self.getRed(&r, green: &g, blue: &b, alpha: &a)
-    return (r, g, b, a)
-  }
-}
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   var colors: [(red: CGFloat, green: CGFloat, blue: CGFloat, isPrimary: Bool)] = [
@@ -33,11 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     (red: 0.0, green: 1.0, blue: 0.0, isPrimary: true),
     (red: 0.0, green: 0.0, blue: 1.0, isPrimary: true),
 
-    (red: 1.0, green: 1.0, blue: 1.0, isPrimary: false),
     (red: 1.0, green: 1.0, blue: 0.0, isPrimary: false),
     (red: 1.0, green: 0.0, blue: 1.0, isPrimary: false),
-
-    (red: 0.0, green: 1.0, blue: 1.0, isPrimary: false),
     (red: 1.0, green: 0.5, blue: 0.0, isPrimary: false)
   ]
 
