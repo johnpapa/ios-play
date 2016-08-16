@@ -11,23 +11,35 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   let primaryColorCount = 3
-  var colors: [(red: Double, green: Double, blue: Double, isPrimary: Bool)] = [
+  var colors: [(red: CGFloat, green: CGFloat, blue: CGFloat, isPrimary: Bool)] = [
     (red: 1.0, green: 0.0, blue: 0.0, isPrimary: true),
     (red: 0.0, green: 1.0, blue: 0.0, isPrimary: true),
-    (red: 0.0, green: 0.0, blue: 1.0, isPrimary: true)
+    (red: 0.0, green: 0.0, blue: 1.0, isPrimary: true),
+
+    (red: 1.0, green: 1.0, blue: 1.0, isPrimary: true),
+    (red: 1.0, green: 1.0, blue: 0.0, isPrimary: true),
+    (red: 1.0, green: 0.0, blue: 1.0, isPrimary: true),
+
+    (red: 0.0, green: 1.0, blue: 1.0, isPrimary: true),
+    (red: 0.0, green: 0.0, blue: 0.0, isPrimary: true)
   ]
 
-  var i: Int = 50
-  
   @IBOutlet var changeDataButton: UIButton!
   @IBOutlet var tableView: UITableView!
+  @IBOutlet var redText: UITextField!
+  @IBOutlet var greenText: UITextField!
+  @IBOutlet var blueText: UITextField!
   
   @IBAction func buttonClicked(sender: UIButton) {
     print("button was clicked")
-    //TODO:
-//    i = i + 1
-//    data.append((red: "new value \(i)", age: i))
-//    self.tableView.reloadData()
+    //if let red = redText.text!, let green = greenText.text!, let blue = blueText.text! {
+    
+    let red = CGFloat(Float(redText.text!)!)
+    let green = CGFloat(Float(greenText.text!)!)
+    let blue = CGFloat(Float(blueText.text!)!)
+    
+    colors.append((red: red, green: green, blue: blue, isPrimary: false))
+    self.tableView.reloadData()
   }
 
   override func viewDidLoad() {
@@ -84,6 +96,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     print(str)
     
     cell.textLabel?.text = str
+    cell.backgroundColor = UIColor(red: colors[idx].red, green: colors[idx].green, blue: colors[idx].blue, alpha: 1.0)
+    
     return cell
   }
   
