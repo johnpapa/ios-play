@@ -34,7 +34,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let blue: CGFloat = (blueText.text?.toCGFloat())!
     
     colors.append((red: red, green: green, blue: blue, isPrimary: false))
+    
+    clearInput()
+    
     self.tableView.reloadData()
+  }
+  
+  func clearInput() {
+    redText.text = ""
+    greenText.text = ""
+    blueText.text = ""
   }
 
   override func viewDidLoad() {

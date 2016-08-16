@@ -11,7 +11,8 @@ import UIKit
 
 extension String {
   func toCGFloat() -> CGFloat {
-    return CGFloat(Float(self)!)
+    let val = Float(self) ?? 0
+    return CGFloat(val)
   }
 }
 
