@@ -28,18 +28,17 @@ extension UIColor {
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-  let primaryColorCount = 3
   var colors: [(red: CGFloat, green: CGFloat, blue: CGFloat, isPrimary: Bool)] = [
     (red: 1.0, green: 0.0, blue: 0.0, isPrimary: true),
     (red: 0.0, green: 1.0, blue: 0.0, isPrimary: true),
     (red: 0.0, green: 0.0, blue: 1.0, isPrimary: true),
 
-    (red: 1.0, green: 1.0, blue: 1.0, isPrimary: true),
-    (red: 1.0, green: 1.0, blue: 0.0, isPrimary: true),
-    (red: 1.0, green: 0.0, blue: 1.0, isPrimary: true),
+    (red: 1.0, green: 1.0, blue: 1.0, isPrimary: false),
+    (red: 1.0, green: 1.0, blue: 0.0, isPrimary: false),
+    (red: 1.0, green: 0.0, blue: 1.0, isPrimary: false),
 
-    (red: 0.0, green: 1.0, blue: 1.0, isPrimary: true),
-    (red: 0.0, green: 0.0, blue: 0.0, isPrimary: true)
+    (red: 0.0, green: 1.0, blue: 1.0, isPrimary: false),
+    (red: 1.0, green: 0.5, blue: 0.0, isPrimary: false)
   ]
 
   @IBOutlet var changeDataButton: UIButton!
@@ -89,6 +88,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     } else {
       // put all the rest of the rows here
       return colors.count - primaryColorCount
+    }
+  }
+  
+  var primaryColorCount: Int {
+    get {
+      let primaryColors = colors.filter({ (red: CGFloat, green: CGFloat, blue: CGFloat, isPrimary: Bool) -> Bool in
+        return isPrimary
+      })
+      return primaryColors.count
     }
   }
   
