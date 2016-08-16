@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 
   @IBAction func getData(sender: UIButton) {
     // http://rss.itunes.apple.com/us/?urlDesc=%2Fgenerator
-    let url = NSURL(string: "https://itunes.apple.com/us/rss/newfreeapplications/limit=100/json")!
+    let url = NSURL(string: "https://itunes.apple.com/us/rss/topgrossingapplications/limit=2/json")!
     
     let session = NSURLSession.sharedSession()
     
