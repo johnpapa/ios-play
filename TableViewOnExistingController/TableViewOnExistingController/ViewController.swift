@@ -11,10 +11,11 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   var data: [(name: String, age: Int)] = [
-    (name: "John", age: 25),
-    (name: "Brian", age: 17),
+    (name: "Max", age: 2),
+    (name: "Princess", age: 2),
+    (name: "Jim", age: 33),
     (name: "Mary", age: 43),
-    (name: "Keith", age: 4)
+    (name: "Keith", age: 14)
   ]
 
   var i: Int = 50
@@ -88,9 +89,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     if section == 0 {
-      return "Section 1"
+      return "Pets"
     } else {
-      return "Section 2"
+      return "People"
     }
     
   }
