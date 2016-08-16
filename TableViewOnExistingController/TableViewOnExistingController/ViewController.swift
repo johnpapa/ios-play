@@ -8,6 +8,24 @@
 
 import UIKit
 
+extension String {
+  func toCGFloat() -> CGFloat {
+    return CGFloat(Float(self)!)
+  }
+}
+
+extension UIColor {
+  var components: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+    var r, g, b, a: CGFloat
+    r = 0.0
+    g = 0.0
+    b = 0.0
+    a = 0.0
+    self.getRed(&r, green: &g, blue: &b, alpha: &a)
+    return (r, g, b, a)
+  }
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   let primaryColorCount = 3
@@ -32,11 +50,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
   @IBAction func buttonClicked(sender: UIButton) {
     print("button was clicked")
-    //if let red = redText.text!, let green = greenText.text!, let blue = blueText.text! {
-    
-    let red = CGFloat(Float(redText.text!)!)
-    let green = CGFloat(Float(greenText.text!)!)
-    let blue = CGFloat(Float(blueText.text!)!)
+
+    let red: CGFloat = (redText.text?.toCGFloat())!
+    let green: CGFloat = (greenText.text?.toCGFloat())!
+    let blue: CGFloat = (blueText.text?.toCGFloat())!
     
     colors.append((red: red, green: green, blue: blue, isPrimary: false))
     self.tableView.reloadData()
