@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		818EDF381D64BBD8006180B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF371D64BBD8006180B1 /* AppDelegate.swift */; };
-		818EDF3A1D64BBD8006180B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF391D64BBD8006180B1 /* ViewController.swift */; };
-		818EDF3D1D64BBD8006180B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF3B1D64BBD8006180B1 /* Main.storyboard */; };
-		818EDF3F1D64BBD9006180B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF3E1D64BBD9006180B1 /* Assets.xcassets */; };
-		818EDF421D64BBD9006180B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF401D64BBD9006180B1 /* LaunchScreen.storyboard */; };
-		818EDF6A1D64E357006180B1 /* Custom_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */; };
+		818EDF561D64DCE1006180B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF551D64DCE1006180B1 /* AppDelegate.swift */; };
+		818EDF581D64DCE1006180B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF571D64DCE1006180B1 /* ViewController.swift */; };
+		818EDF5B1D64DCE1006180B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF591D64DCE1006180B1 /* Main.storyboard */; };
+		818EDF5D1D64DCE1006180B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF5C1D64DCE1006180B1 /* Assets.xcassets */; };
+		818EDF601D64DCE1006180B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF5E1D64DCE1006180B1 /* LaunchScreen.storyboard */; };
+		818EDF681D64DDCD006180B1 /* CustomCell_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF671D64DDCD006180B1 /* CustomCell_TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		818EDF341D64BBD8006180B1 /* TopiTunesAppsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopiTunesAppsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		818EDF371D64BBD8006180B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		818EDF391D64BBD8006180B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		818EDF3C1D64BBD8006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		818EDF3E1D64BBD9006180B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		818EDF411D64BBD9006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		818EDF431D64BBD9006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_TableViewCell.swift; sourceTree = "<group>"; };
+		818EDF521D64DCE1006180B1 /* TableViewWIthCustomCells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewWIthCustomCells.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		818EDF551D64DCE1006180B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		818EDF571D64DCE1006180B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		818EDF5A1D64DCE1006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		818EDF5C1D64DCE1006180B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		818EDF5F1D64DCE1006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		818EDF611D64DCE1006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		818EDF671D64DDCD006180B1 /* CustomCell_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell_TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		818EDF311D64BBD8006180B1 /* Frameworks */ = {
+		818EDF4F1D64DCE1006180B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,72 +37,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		818EDF2B1D64BBD8006180B1 = {
+		818EDF491D64DCE1006180B1 = {
 			isa = PBXGroup;
 			children = (
-				818EDF361D64BBD8006180B1 /* TopiTunesAppsDemo */,
-				818EDF351D64BBD8006180B1 /* Products */,
+				818EDF541D64DCE1006180B1 /* TableViewWIthCustomCells */,
+				818EDF531D64DCE1006180B1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		818EDF351D64BBD8006180B1 /* Products */ = {
+		818EDF531D64DCE1006180B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				818EDF341D64BBD8006180B1 /* TopiTunesAppsDemo.app */,
+				818EDF521D64DCE1006180B1 /* TableViewWIthCustomCells.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		818EDF361D64BBD8006180B1 /* TopiTunesAppsDemo */ = {
+		818EDF541D64DCE1006180B1 /* TableViewWIthCustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				818EDF371D64BBD8006180B1 /* AppDelegate.swift */,
-				818EDF391D64BBD8006180B1 /* ViewController.swift */,
-				818EDF3B1D64BBD8006180B1 /* Main.storyboard */,
-				818EDF3E1D64BBD9006180B1 /* Assets.xcassets */,
-				818EDF401D64BBD9006180B1 /* LaunchScreen.storyboard */,
-				818EDF431D64BBD9006180B1 /* Info.plist */,
-				818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */,
+				818EDF551D64DCE1006180B1 /* AppDelegate.swift */,
+				818EDF571D64DCE1006180B1 /* ViewController.swift */,
+				818EDF591D64DCE1006180B1 /* Main.storyboard */,
+				818EDF5C1D64DCE1006180B1 /* Assets.xcassets */,
+				818EDF5E1D64DCE1006180B1 /* LaunchScreen.storyboard */,
+				818EDF611D64DCE1006180B1 /* Info.plist */,
+				818EDF671D64DDCD006180B1 /* CustomCell_TableViewCell.swift */,
 			);
-			path = TopiTunesAppsDemo;
+			path = TableViewWIthCustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		818EDF331D64BBD8006180B1 /* TopiTunesAppsDemo */ = {
+		818EDF511D64DCE1006180B1 /* TableViewWIthCustomCells */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 818EDF461D64BBD9006180B1 /* Build configuration list for PBXNativeTarget "TopiTunesAppsDemo" */;
+			buildConfigurationList = 818EDF641D64DCE1006180B1 /* Build configuration list for PBXNativeTarget "TableViewWIthCustomCells" */;
 			buildPhases = (
-				818EDF301D64BBD8006180B1 /* Sources */,
-				818EDF311D64BBD8006180B1 /* Frameworks */,
-				818EDF321D64BBD8006180B1 /* Resources */,
+				818EDF4E1D64DCE1006180B1 /* Sources */,
+				818EDF4F1D64DCE1006180B1 /* Frameworks */,
+				818EDF501D64DCE1006180B1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = TopiTunesAppsDemo;
-			productName = TopiTunesAppsDemo;
-			productReference = 818EDF341D64BBD8006180B1 /* TopiTunesAppsDemo.app */;
+			name = TableViewWIthCustomCells;
+			productName = TableViewWIthCustomCells;
+			productReference = 818EDF521D64DCE1006180B1 /* TableViewWIthCustomCells.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		818EDF2C1D64BBD8006180B1 /* Project object */ = {
+		818EDF4A1D64DCE1006180B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Papa, John L";
 				TargetAttributes = {
-					818EDF331D64BBD8006180B1 = {
+					818EDF511D64DCE1006180B1 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 818EDF2F1D64BBD8006180B1 /* Build configuration list for PBXProject "TopiTunesAppsDemo" */;
+			buildConfigurationList = 818EDF4D1D64DCE1006180B1 /* Build configuration list for PBXProject "TableViewWIthCustomCells" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -110,55 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 818EDF2B1D64BBD8006180B1;
-			productRefGroup = 818EDF351D64BBD8006180B1 /* Products */;
+			mainGroup = 818EDF491D64DCE1006180B1;
+			productRefGroup = 818EDF531D64DCE1006180B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				818EDF331D64BBD8006180B1 /* TopiTunesAppsDemo */,
+				818EDF511D64DCE1006180B1 /* TableViewWIthCustomCells */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		818EDF321D64BBD8006180B1 /* Resources */ = {
+		818EDF501D64DCE1006180B1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				818EDF421D64BBD9006180B1 /* LaunchScreen.storyboard in Resources */,
-				818EDF3F1D64BBD9006180B1 /* Assets.xcassets in Resources */,
-				818EDF3D1D64BBD8006180B1 /* Main.storyboard in Resources */,
+				818EDF601D64DCE1006180B1 /* LaunchScreen.storyboard in Resources */,
+				818EDF5D1D64DCE1006180B1 /* Assets.xcassets in Resources */,
+				818EDF5B1D64DCE1006180B1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		818EDF301D64BBD8006180B1 /* Sources */ = {
+		818EDF4E1D64DCE1006180B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				818EDF3A1D64BBD8006180B1 /* ViewController.swift in Sources */,
-				818EDF6A1D64E357006180B1 /* Custom_TableViewCell.swift in Sources */,
-				818EDF381D64BBD8006180B1 /* AppDelegate.swift in Sources */,
+				818EDF681D64DDCD006180B1 /* CustomCell_TableViewCell.swift in Sources */,
+				818EDF581D64DCE1006180B1 /* ViewController.swift in Sources */,
+				818EDF561D64DCE1006180B1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		818EDF3B1D64BBD8006180B1 /* Main.storyboard */ = {
+		818EDF591D64DCE1006180B1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				818EDF3C1D64BBD8006180B1 /* Base */,
+				818EDF5A1D64DCE1006180B1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		818EDF401D64BBD9006180B1 /* LaunchScreen.storyboard */ = {
+		818EDF5E1D64DCE1006180B1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				818EDF411D64BBD9006180B1 /* Base */,
+				818EDF5F1D64DCE1006180B1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		818EDF441D64BBD9006180B1 /* Debug */ = {
+		818EDF621D64DCE1006180B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -212,7 +212,7 @@
 			};
 			name = Debug;
 		};
-		818EDF451D64BBD9006180B1 /* Release */ = {
+		818EDF631D64DCE1006180B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -251,24 +251,24 @@
 			};
 			name = Release;
 		};
-		818EDF471D64BBD9006180B1 /* Debug */ = {
+		818EDF651D64DCE1006180B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TopiTunesAppsDemo/Info.plist;
+				INFOPLIST_FILE = TableViewWIthCustomCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yournamegoeshere.TopiTunesAppsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.disney.TableViewWIthCustomCells;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		818EDF481D64BBD9006180B1 /* Release */ = {
+		818EDF661D64DCE1006180B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TopiTunesAppsDemo/Info.plist;
+				INFOPLIST_FILE = TableViewWIthCustomCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yournamegoeshere.TopiTunesAppsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.disney.TableViewWIthCustomCells;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -276,25 +276,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		818EDF2F1D64BBD8006180B1 /* Build configuration list for PBXProject "TopiTunesAppsDemo" */ = {
+		818EDF4D1D64DCE1006180B1 /* Build configuration list for PBXProject "TableViewWIthCustomCells" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				818EDF441D64BBD9006180B1 /* Debug */,
-				818EDF451D64BBD9006180B1 /* Release */,
+				818EDF621D64DCE1006180B1 /* Debug */,
+				818EDF631D64DCE1006180B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		818EDF461D64BBD9006180B1 /* Build configuration list for PBXNativeTarget "TopiTunesAppsDemo" */ = {
+		818EDF641D64DCE1006180B1 /* Build configuration list for PBXNativeTarget "TableViewWIthCustomCells" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				818EDF471D64BBD9006180B1 /* Debug */,
-				818EDF481D64BBD9006180B1 /* Release */,
+				818EDF651D64DCE1006180B1 /* Debug */,
+				818EDF661D64DCE1006180B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 818EDF2C1D64BBD8006180B1 /* Project object */;
+	rootObject = 818EDF4A1D64DCE1006180B1 /* Project object */;
 }

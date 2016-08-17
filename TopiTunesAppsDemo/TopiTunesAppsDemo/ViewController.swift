@@ -73,17 +73,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               guard let entryDict = entry as? NSDictionary else { continue }
               
               guard let titleDict = entryDict["title"] as? NSDictionary else { continue }
-
+              
               guard let label = titleDict["label"] as? String else { continue }
               
               print("*** label = \(label ?? " ")")
-
+              
               guard let images = entryDict["im:image"] as? NSArray else { continue }
               let image = images[0]
               let imageUrl = image["label"]!! as! String // TODO: Why bang bang?
               print("image url = \(imageUrl)")
               
-
+              
               self.apps.append(App(title: label, imageUrl: imageUrl))
             }
             
@@ -122,16 +122,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     super.viewDidLoad()
     stepper.value = Double(limit)
     limitLabel.text = String(limit)
-//    self.tableView.delegate = self
-//    self.tableView.dataSource = self
+    
+    tableView.estimatedRowHeight = 85.0
+
+    tableView.rowHeight = UITableViewAutomaticDimension
+    
+    
+    //    self.tableView.delegate = self
+    //    self.tableView.dataSource = self
     // Do any additional setup after loading the view, typically from a nib.
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
+  
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     // #warning Incomplete implementation, return the number of sections
     
@@ -155,8 +161,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // at init/appear ... this runs for each visible cell that needs to render
     
-    let appcell = tableView.dequeueReusableCellWithIdentifier("appnamecell", forIndexPath: indexPath)
-//    let imagecell = tableView.dequeueReusableCellWithIdentifier("imagecell", forIndexPath: indexPath)
+    let appcell = tableView.dequeueReusableCellWithIdentifier("customcell", forIndexPath: indexPath) as! Custom_TableViewCell
     
     var idx: Int = 0
     
@@ -164,34 +169,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       idx = indexPath.row
     }
     
-//    if (idx == 0) {
-      // app name
-      let appname = apps[idx].title
-      
-      print(appname)
-      
-      appcell.textLabel?.text = appname
-      
-      return appcell
-//    } else {
-//      // image
-//      let imageUrl = apps[idx].imageUrl
-//      
-//      imagecell.textLabel?.text = imageUrl
-//      
-//      return imagecell
-//    }
+    // app name
+    let appname = apps[idx].title
     
+    print(appname)
+    
+    appcell.appTitle?.text = apps[idx].title
+    
+    let url: String = (NSURL(string: apps[idx].imageUrl)?.absoluteString)!
+    
+    NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!, completionHandler: { (data, response, error) -> Void in
+      
+      if error != nil {
+        print(error)
+        return
+      }
+      
+      dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        let image = UIImage(data: data!)
+        appcell.imageView?.image = image
+      })
+      
+    }).resume()
+    
+    return appcell
   }
+  
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     if section == 0 {
       //
     }
-    return "Apps"    
+    return "iTunes Top Apps"
   }
-
-
+  
+  
 }
 
 class App {

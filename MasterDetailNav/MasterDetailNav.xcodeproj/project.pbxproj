@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		818EDF381D64BBD8006180B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF371D64BBD8006180B1 /* AppDelegate.swift */; };
-		818EDF3A1D64BBD8006180B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF391D64BBD8006180B1 /* ViewController.swift */; };
-		818EDF3D1D64BBD8006180B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF3B1D64BBD8006180B1 /* Main.storyboard */; };
-		818EDF3F1D64BBD9006180B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF3E1D64BBD9006180B1 /* Assets.xcassets */; };
-		818EDF421D64BBD9006180B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF401D64BBD9006180B1 /* LaunchScreen.storyboard */; };
-		818EDF6A1D64E357006180B1 /* Custom_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */; };
+		818EDF781D65099A006180B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF771D65099A006180B1 /* AppDelegate.swift */; };
+		818EDF7A1D65099A006180B1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF791D65099A006180B1 /* MasterViewController.swift */; };
+		818EDF7D1D65099A006180B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF7B1D65099A006180B1 /* Main.storyboard */; };
+		818EDF7F1D65099A006180B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF7E1D65099A006180B1 /* Assets.xcassets */; };
+		818EDF821D65099A006180B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF801D65099A006180B1 /* LaunchScreen.storyboard */; };
+		818EDF8A1D650A9B006180B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF891D650A9B006180B1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		818EDF341D64BBD8006180B1 /* TopiTunesAppsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopiTunesAppsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		818EDF371D64BBD8006180B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		818EDF391D64BBD8006180B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		818EDF3C1D64BBD8006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		818EDF3E1D64BBD9006180B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		818EDF411D64BBD9006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		818EDF431D64BBD9006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_TableViewCell.swift; sourceTree = "<group>"; };
+		818EDF741D65099A006180B1 /* MasterDetailNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDetailNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		818EDF771D65099A006180B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		818EDF791D65099A006180B1 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		818EDF7C1D65099A006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		818EDF7E1D65099A006180B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		818EDF811D65099A006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		818EDF831D65099A006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		818EDF891D650A9B006180B1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		818EDF311D64BBD8006180B1 /* Frameworks */ = {
+		818EDF711D65099A006180B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,72 +37,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		818EDF2B1D64BBD8006180B1 = {
+		818EDF6B1D65099A006180B1 = {
 			isa = PBXGroup;
 			children = (
-				818EDF361D64BBD8006180B1 /* TopiTunesAppsDemo */,
-				818EDF351D64BBD8006180B1 /* Products */,
+				818EDF761D65099A006180B1 /* MasterDetailNav */,
+				818EDF751D65099A006180B1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		818EDF351D64BBD8006180B1 /* Products */ = {
+		818EDF751D65099A006180B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				818EDF341D64BBD8006180B1 /* TopiTunesAppsDemo.app */,
+				818EDF741D65099A006180B1 /* MasterDetailNav.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		818EDF361D64BBD8006180B1 /* TopiTunesAppsDemo */ = {
+		818EDF761D65099A006180B1 /* MasterDetailNav */ = {
 			isa = PBXGroup;
 			children = (
-				818EDF371D64BBD8006180B1 /* AppDelegate.swift */,
-				818EDF391D64BBD8006180B1 /* ViewController.swift */,
-				818EDF3B1D64BBD8006180B1 /* Main.storyboard */,
-				818EDF3E1D64BBD9006180B1 /* Assets.xcassets */,
-				818EDF401D64BBD9006180B1 /* LaunchScreen.storyboard */,
-				818EDF431D64BBD9006180B1 /* Info.plist */,
-				818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */,
+				818EDF771D65099A006180B1 /* AppDelegate.swift */,
+				818EDF791D65099A006180B1 /* MasterViewController.swift */,
+				818EDF7B1D65099A006180B1 /* Main.storyboard */,
+				818EDF7E1D65099A006180B1 /* Assets.xcassets */,
+				818EDF801D65099A006180B1 /* LaunchScreen.storyboard */,
+				818EDF831D65099A006180B1 /* Info.plist */,
+				818EDF891D650A9B006180B1 /* DetailViewController.swift */,
 			);
-			path = TopiTunesAppsDemo;
+			path = MasterDetailNav;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		818EDF331D64BBD8006180B1 /* TopiTunesAppsDemo */ = {
+		818EDF731D65099A006180B1 /* MasterDetailNav */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 818EDF461D64BBD9006180B1 /* Build configuration list for PBXNativeTarget "TopiTunesAppsDemo" */;
+			buildConfigurationList = 818EDF861D65099A006180B1 /* Build configuration list for PBXNativeTarget "MasterDetailNav" */;
 			buildPhases = (
-				818EDF301D64BBD8006180B1 /* Sources */,
-				818EDF311D64BBD8006180B1 /* Frameworks */,
-				818EDF321D64BBD8006180B1 /* Resources */,
+				818EDF701D65099A006180B1 /* Sources */,
+				818EDF711D65099A006180B1 /* Frameworks */,
+				818EDF721D65099A006180B1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = TopiTunesAppsDemo;
-			productName = TopiTunesAppsDemo;
-			productReference = 818EDF341D64BBD8006180B1 /* TopiTunesAppsDemo.app */;
+			name = MasterDetailNav;
+			productName = MasterDetailNav;
+			productReference = 818EDF741D65099A006180B1 /* MasterDetailNav.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		818EDF2C1D64BBD8006180B1 /* Project object */ = {
+		818EDF6C1D65099A006180B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Papa, John L";
 				TargetAttributes = {
-					818EDF331D64BBD8006180B1 = {
+					818EDF731D65099A006180B1 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 818EDF2F1D64BBD8006180B1 /* Build configuration list for PBXProject "TopiTunesAppsDemo" */;
+			buildConfigurationList = 818EDF6F1D65099A006180B1 /* Build configuration list for PBXProject "MasterDetailNav" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -110,55 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 818EDF2B1D64BBD8006180B1;
-			productRefGroup = 818EDF351D64BBD8006180B1 /* Products */;
+			mainGroup = 818EDF6B1D65099A006180B1;
+			productRefGroup = 818EDF751D65099A006180B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				818EDF331D64BBD8006180B1 /* TopiTunesAppsDemo */,
+				818EDF731D65099A006180B1 /* MasterDetailNav */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		818EDF321D64BBD8006180B1 /* Resources */ = {
+		818EDF721D65099A006180B1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				818EDF421D64BBD9006180B1 /* LaunchScreen.storyboard in Resources */,
-				818EDF3F1D64BBD9006180B1 /* Assets.xcassets in Resources */,
-				818EDF3D1D64BBD8006180B1 /* Main.storyboard in Resources */,
+				818EDF821D65099A006180B1 /* LaunchScreen.storyboard in Resources */,
+				818EDF7F1D65099A006180B1 /* Assets.xcassets in Resources */,
+				818EDF7D1D65099A006180B1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		818EDF301D64BBD8006180B1 /* Sources */ = {
+		818EDF701D65099A006180B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				818EDF3A1D64BBD8006180B1 /* ViewController.swift in Sources */,
-				818EDF6A1D64E357006180B1 /* Custom_TableViewCell.swift in Sources */,
-				818EDF381D64BBD8006180B1 /* AppDelegate.swift in Sources */,
+				818EDF8A1D650A9B006180B1 /* DetailViewController.swift in Sources */,
+				818EDF7A1D65099A006180B1 /* MasterViewController.swift in Sources */,
+				818EDF781D65099A006180B1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		818EDF3B1D64BBD8006180B1 /* Main.storyboard */ = {
+		818EDF7B1D65099A006180B1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				818EDF3C1D64BBD8006180B1 /* Base */,
+				818EDF7C1D65099A006180B1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		818EDF401D64BBD9006180B1 /* LaunchScreen.storyboard */ = {
+		818EDF801D65099A006180B1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				818EDF411D64BBD9006180B1 /* Base */,
+				818EDF811D65099A006180B1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		818EDF441D64BBD9006180B1 /* Debug */ = {
+		818EDF841D65099A006180B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -212,7 +212,7 @@
 			};
 			name = Debug;
 		};
-		818EDF451D64BBD9006180B1 /* Release */ = {
+		818EDF851D65099A006180B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -251,24 +251,24 @@
 			};
 			name = Release;
 		};
-		818EDF471D64BBD9006180B1 /* Debug */ = {
+		818EDF871D65099A006180B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TopiTunesAppsDemo/Info.plist;
+				INFOPLIST_FILE = MasterDetailNav/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yournamegoeshere.TopiTunesAppsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.disney.MasterDetailNav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		818EDF481D64BBD9006180B1 /* Release */ = {
+		818EDF881D65099A006180B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TopiTunesAppsDemo/Info.plist;
+				INFOPLIST_FILE = MasterDetailNav/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yournamegoeshere.TopiTunesAppsDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.disney.MasterDetailNav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -276,25 +276,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		818EDF2F1D64BBD8006180B1 /* Build configuration list for PBXProject "TopiTunesAppsDemo" */ = {
+		818EDF6F1D65099A006180B1 /* Build configuration list for PBXProject "MasterDetailNav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				818EDF441D64BBD9006180B1 /* Debug */,
-				818EDF451D64BBD9006180B1 /* Release */,
+				818EDF841D65099A006180B1 /* Debug */,
+				818EDF851D65099A006180B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		818EDF461D64BBD9006180B1 /* Build configuration list for PBXNativeTarget "TopiTunesAppsDemo" */ = {
+		818EDF861D65099A006180B1 /* Build configuration list for PBXNativeTarget "MasterDetailNav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				818EDF471D64BBD9006180B1 /* Debug */,
-				818EDF481D64BBD9006180B1 /* Release */,
+				818EDF871D65099A006180B1 /* Debug */,
+				818EDF881D65099A006180B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 818EDF2C1D64BBD8006180B1 /* Project object */;
+	rootObject = 818EDF6C1D65099A006180B1 /* Project object */;
 }
