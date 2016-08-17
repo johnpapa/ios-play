@@ -64,11 +64,9 @@ class ViewController: UIViewController {
             
             // This does not run ... we will learn more about getting json from background to ui thread later.
 
-//            dispatch_async(dispatch_get_main_queue()) {
-//              if let feed = json["feed"] as? String {
-//                self.outputTextview.text = feed
-//              }
-//            }
+            dispatch_async(dispatch_get_main_queue()) {
+                self.outputTextview.text = str
+            }
             
             guard let dict = json["feed"] as? NSDictionary else { return }
             guard let entries = dict["entry"] as? NSArray else { return }
