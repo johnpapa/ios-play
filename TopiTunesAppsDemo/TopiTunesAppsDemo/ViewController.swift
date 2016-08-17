@@ -64,19 +64,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             // This does not run ... we will learn more about getting json from background to ui thread later.
             
-            dispatch_async(dispatch_get_main_queue()) {
-              //self.outputTextview.text = str
-            }
-            
             guard let dict = json["feed"] as? NSDictionary else { return }
             guard let entries = dict["entry"] as? NSArray else { return }
             
             print(dict["entry"])
             
-            dispatch_async(dispatch_get_main_queue()) {
-              //appCount = entries.count
-              //self.outputMessage.text = "\(appCount) returned"
-            }
             for entry in entries {
               guard let entryDict = entry as? NSDictionary else { continue }
               
@@ -86,7 +78,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               
               print("*** label = \(label ?? " ")")
 
-              self.apps.append(App(title: label))
+              guard let images = entryDict["im:image"] as? NSArray else { continue }
+              let image = images[0]
+              let imageUrl = image["label"]!! as! String // TODO: Why bang bang?
+              print("image url = \(imageUrl)")
+              
+
+              self.apps.append(App(title: label, imageUrl: imageUrl))
             }
             
             dispatch_async(dispatch_get_main_queue()) {
@@ -157,7 +155,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // at init/appear ... this runs for each visible cell that needs to render
     
-    let cell = tableView.dequeueReusableCellWithIdentifier("appnamecell", forIndexPath: indexPath)
+    let appcell = tableView.dequeueReusableCellWithIdentifier("appnamecell", forIndexPath: indexPath)
+//    let imagecell = tableView.dequeueReusableCellWithIdentifier("imagecell", forIndexPath: indexPath)
     
     var idx: Int = 0
     
@@ -165,13 +164,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       idx = indexPath.row
     }
     
-    let appname = apps[idx].title
+//    if (idx == 0) {
+      // app name
+      let appname = apps[idx].title
+      
+      print(appname)
+      
+      appcell.textLabel?.text = appname
+      
+      return appcell
+//    } else {
+//      // image
+//      let imageUrl = apps[idx].imageUrl
+//      
+//      imagecell.textLabel?.text = imageUrl
+//      
+//      return imagecell
+//    }
     
-    print(appname)
-    
-    cell.textLabel?.text = appname
-    
-    return cell
   }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -186,7 +196,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 class App {
   var title: String = ""
-  init(title: String) {
+  var imageUrl: String = ""
+  
+  init(title: String, imageUrl: String) {
     self.title = title
+    self.imageUrl = imageUrl
   }
 }
