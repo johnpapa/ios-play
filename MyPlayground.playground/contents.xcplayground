@@ -16,5 +16,6 @@
         <page name='dict'/>
         <page name='exception handling'/>
         <page name='networking'/>
+        <page name='encoding'/>
     </pages>
 </playground>
