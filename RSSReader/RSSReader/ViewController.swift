@@ -12,6 +12,7 @@ class ViewController: UIViewController {
   
   @IBOutlet var okButton: UIButton!
   @IBOutlet var outputTextview: UITextView!
+  @IBOutlet var outputMessage: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
       if let data = data {
         NSLog("Got \(data.length) bytes.")
         let str = String(data: data, encoding: NSISOLatin1StringEncoding)
-        
+
         print("*** Here are the string contents:")
         print(str)
         print("*** ***")
@@ -56,21 +57,28 @@ class ViewController: UIViewController {
           print("Status code = \(statusCode)")
           print("Everyone is fine, file downloaded successfully.")
           
-          let json2 = self.parseJson(data)
-          if let json = json2 {
+          let possibleJson = self.parseJson(data)
+          if let json = possibleJson {
             print(json["feed"])
             print(json["feed"]!.dynamicType)
             
             // This does not run ... we will learn more about getting json from background to ui thread later.
-            if let feed = json["feed"] as? String {
-              self.outputTextview.text = feed
-            }
+
+//            dispatch_async(dispatch_get_main_queue()) {
+//              if let feed = json["feed"] as? String {
+//                self.outputTextview.text = feed
+//              }
+//            }
             
             guard let dict = json["feed"] as? NSDictionary else { return }
             guard let entries = dict["entry"] as? NSArray else { return }
             
             print(dict["entry"])
-            
+
+            dispatch_async(dispatch_get_main_queue()) {
+              let appCount = entries.count
+              self.outputMessage.text = "\(appCount) returned"
+            }
             for entry in entries {
               guard let entryDict = entry as? NSDictionary else { continue }
               
