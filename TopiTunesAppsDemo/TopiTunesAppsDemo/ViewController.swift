@@ -146,7 +146,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let url: String = (NSURL(string: apps[idx].imageUrl)?.absoluteString)!
     
     NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!, completionHandler: { (data, response, error) -> Void in
-      
       if error != nil {
         print(error)
         return
@@ -155,6 +154,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       dispatch_async(dispatch_get_main_queue(), { // () -> Void in
         let image = UIImage(data: data!)
         appcell.imageView?.image = image
+        appcell.layoutSubviews()
       })
       
     }).resume()
