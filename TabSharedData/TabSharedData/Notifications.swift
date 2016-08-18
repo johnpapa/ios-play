@@ -8,4 +8,8 @@
 
 import Foundation
 
-let DATA_CHANGED = NSNotification(name: "data changed", object: nil)
+let DATA_CHANGED = NSNotification(name: "data changed", object: DataService())
+
+//let DATA_CHANGED = NSNotification(name: "data changed", object: DataService(), userInfo: ["data": "some data goes here"])
+
+//let DATA_CHANGED = NSNotification(name: "data changed", object: DataService(), userInfo: ["data": Person])
