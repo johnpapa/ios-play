@@ -12,7 +12,6 @@
 		818EDFD91D660124006180B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDFD71D660124006180B1 /* Main.storyboard */; };
 		818EDFDB1D660124006180B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818EDFDA1D660124006180B1 /* Assets.xcassets */; };
 		818EDFDE1D660124006180B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDFDC1D660124006180B1 /* LaunchScreen.storyboard */; };
-		818EDFE61D662DB9006180B1 /* donald.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 818EDFE51D662DB9006180B1 /* donald.jpg */; };
 		818EDFEA1D662FB9006180B1 /* disney-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 818EDFE91D662FB9006180B1 /* disney-small.png */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		818EDFDA1D660124006180B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		818EDFDD1D660124006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		818EDFDF1D660124006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		818EDFE51D662DB9006180B1 /* donald.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = donald.jpg; sourceTree = "<group>"; };
 		818EDFE91D662FB9006180B1 /* disney-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disney-small.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +58,6 @@
 			children = (
 				818EDFD31D660124006180B1 /* AppDelegate.swift */,
 				818EDFD51D660124006180B1 /* ViewController.swift */,
-				818EDFE51D662DB9006180B1 /* donald.jpg */,
 				818EDFE91D662FB9006180B1 /* disney-small.png */,
 				818EDFD71D660124006180B1 /* Main.storyboard */,
 				818EDFDA1D660124006180B1 /* Assets.xcassets */,
@@ -131,7 +128,6 @@
 				818EDFDE1D660124006180B1 /* LaunchScreen.storyboard in Resources */,
 				818EDFDB1D660124006180B1 /* Assets.xcassets in Resources */,
 				818EDFD91D660124006180B1 /* Main.storyboard in Resources */,
-				818EDFE61D662DB9006180B1 /* donald.jpg in Resources */,
 				818EDFEA1D662FB9006180B1 /* disney-small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

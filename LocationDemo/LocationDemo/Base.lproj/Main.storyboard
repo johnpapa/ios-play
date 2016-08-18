@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6By-hV-MlH">
-                                <rect key="frame" x="16" y="20" width="136" height="30"/>
+                                <rect key="frame" x="-4" y="20" width="168" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="YxM-xF-pma"/>
+                                    <constraint firstAttribute="width" constant="168" id="YxM-xF-pma"/>
                                 </constraints>
-                                <state key="normal" title="Get Location"/>
+                                <state key="normal" title="Get Current Location"/>
                                 <connections>
                                     <action selector="locationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XKh-Al-vin"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-FJ-FpE">
-                                <rect key="frame" x="16" y="110" width="288" height="450"/>
+                                <rect key="frame" x="-4" y="110" width="328" height="458"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="kjL-Nh-93R"/>
                                 </connections>
@@ -41,11 +41,11 @@
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zR-9D-urG">
-                                <rect key="frame" x="164" y="20" width="136" height="30"/>
+                                <rect key="frame" x="172" y="20" width="136" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="136" id="vJB-68-xPN"/>
                                 </constraints>
-                                <state key="normal" title="Epcot"/>
+                                <state key="normal" title="Go to Epcot"/>
                                 <connections>
                                     <action selector="epcotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ruo-Fd-XVb"/>
                                     <action selector="locationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4WM-3r-XEA"/>
@@ -54,16 +54,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dyJ-FJ-FpE" secondAttribute="bottom" constant="8" id="4ha-k6-V14"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dyJ-FJ-FpE" secondAttribute="bottom" id="4ha-k6-V14"/>
                             <constraint firstItem="BCh-Z5-B5y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="6Tp-Gi-pgT"/>
                             <constraint firstItem="6By-hV-MlH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FQm-gI-Iei"/>
                             <constraint firstItem="4zR-9D-urG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KGc-q4-Pmi"/>
                             <constraint firstItem="6By-hV-MlH" firstAttribute="leading" secondItem="dyJ-FJ-FpE" secondAttribute="leading" id="Ta3-nt-xxe"/>
-                            <constraint firstItem="dyJ-FJ-FpE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZoH-GE-7sQ"/>
+                            <constraint firstItem="dyJ-FJ-FpE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="ZoH-GE-7sQ"/>
                             <constraint firstItem="dyJ-FJ-FpE" firstAttribute="top" secondItem="BCh-Z5-B5y" secondAttribute="bottom" constant="13" id="akg-oQ-W0V"/>
-                            <constraint firstItem="4zR-9D-urG" firstAttribute="leading" secondItem="6By-hV-MlH" secondAttribute="trailing" constant="12" id="bDT-SK-Eoa"/>
+                            <constraint firstItem="4zR-9D-urG" firstAttribute="leading" secondItem="6By-hV-MlH" secondAttribute="trailing" constant="8" id="bDT-SK-Eoa"/>
                             <constraint firstItem="BCh-Z5-B5y" firstAttribute="top" secondItem="6By-hV-MlH" secondAttribute="bottom" constant="16" id="baH-fv-3jT"/>
-                            <constraint firstItem="dyJ-FJ-FpE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="t3q-XI-30G"/>
+                            <constraint firstItem="dyJ-FJ-FpE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="t3q-XI-30G"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
