@@ -29,11 +29,17 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-FJ-FpE">
-                                <rect key="frame" x="16" y="58" width="288" height="502"/>
+                                <rect key="frame" x="16" y="110" width="288" height="450"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="kjL-Nh-93R"/>
                                 </connections>
                             </mapView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCh-Z5-B5y">
+                                <rect key="frame" x="20" y="66" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleMapType:" destination="BYZ-38-t0r" eventType="valueChanged" id="V7h-BO-icw"/>
+                                </connections>
+                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zR-9D-urG">
                                 <rect key="frame" x="164" y="20" width="136" height="30"/>
                                 <constraints>
@@ -49,12 +55,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dyJ-FJ-FpE" secondAttribute="bottom" constant="8" id="4ha-k6-V14"/>
-                            <constraint firstItem="dyJ-FJ-FpE" firstAttribute="top" secondItem="6By-hV-MlH" secondAttribute="bottom" constant="8" id="4sF-YR-5L7"/>
+                            <constraint firstItem="BCh-Z5-B5y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="6Tp-Gi-pgT"/>
                             <constraint firstItem="6By-hV-MlH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FQm-gI-Iei"/>
                             <constraint firstItem="4zR-9D-urG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KGc-q4-Pmi"/>
                             <constraint firstItem="6By-hV-MlH" firstAttribute="leading" secondItem="dyJ-FJ-FpE" secondAttribute="leading" id="Ta3-nt-xxe"/>
                             <constraint firstItem="dyJ-FJ-FpE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZoH-GE-7sQ"/>
+                            <constraint firstItem="dyJ-FJ-FpE" firstAttribute="top" secondItem="BCh-Z5-B5y" secondAttribute="bottom" constant="13" id="akg-oQ-W0V"/>
                             <constraint firstItem="4zR-9D-urG" firstAttribute="leading" secondItem="6By-hV-MlH" secondAttribute="trailing" constant="12" id="bDT-SK-Eoa"/>
+                            <constraint firstItem="BCh-Z5-B5y" firstAttribute="top" secondItem="6By-hV-MlH" secondAttribute="bottom" constant="16" id="baH-fv-3jT"/>
                             <constraint firstItem="dyJ-FJ-FpE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="t3q-XI-30G"/>
                         </constraints>
                     </view>

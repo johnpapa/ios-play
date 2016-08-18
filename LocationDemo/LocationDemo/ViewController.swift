@@ -14,6 +14,7 @@ import Contacts
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
   
   @IBOutlet var mapView: MKMapView!
+  
   var geocoder: CLGeocoder? = nil
   var locationManager: CLLocationManager? = nil
   
@@ -34,7 +35,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
   }
   
   @IBAction func epcotPressed(sender: UIButton) {
-    findAndMapEpcot()
+    gotoEpcot()
   }
   
   @IBAction func locationButton(sender: UIButton) {
@@ -55,25 +56,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     manager.stopUpdatingLocation()
     if let lastLocation = locations.last {
-      self.geoCode(lastLocation) // last is usually best
+      self.gotoCurrentLocation(lastLocation) // last is usually best
       let region = MKCoordinateRegionMakeWithDistance(lastLocation.coordinate, 5000.0, 5000.0)
       self.mapView.setRegion(region, animated: true)
-      self.mapView.mapType = MKMapType.Standard
     }
   }
   
-  func findAndMapEpcot() {
-    
-    let epcotLocation = CLLocation(latitude: 28.37, longitude: -81.55)
-    let region = MKCoordinateRegionMakeWithDistance(epcotLocation.coordinate, 5000.0, 5000.0)
-    self.mapView.mapType = MKMapType.Satellite
-    self.mapView.setRegion(region, animated: true)
+  @IBAction func toggleMapType (sender: UISwitch) {
+    changeMapType()
+  }
+  
+  func changeMapType() {
+    self.mapView.mapType = self.mapView.mapType == MKMapType.Standard ? MKMapType.Satellite : MKMapType.Standard
+  }
+  
+  func gotoEpcot() {
+    geocoder?.geocodeAddressString("Epcot Center, Orlando, FL",
+                                   completionHandler: { (placemarks, error) in
+                                    if let placemarks = placemarks {
+                                      let pm = placemarks.last
+                                      if let epcotCoordinates = pm?.location?.coordinate {
+                                        let region = MKCoordinateRegionMakeWithDistance(epcotCoordinates, 5000.0, 5000.0)
+                                        self.mapView.setRegion(region, animated: true)
 
-    let annotation = MKPointAnnotation()
-    annotation.title = "Epcot"
-    annotation.coordinate = epcotLocation.coordinate
-    self.mapView.addAnnotation(annotation)
-}
+                                        let annotation = MKPointAnnotation()
+                                        annotation.title = "Epcot is here!"
+                                        annotation.coordinate = epcotCoordinates
+                                        self.mapView.addAnnotation(annotation)
+                                      }
+                                    }
+    })
+    
+    // or we could have done this ...
+//    let epcotLocation = CLLocation(latitude: 28.37, longitude: -81.55)
+//    let region = MKCoordinateRegionMakeWithDistance(epcotLocation.coordinate, 5000.0, 5000.0)
+//    self.mapView.setRegion(region, animated: true)
+    
+  }
   
   func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
     NSLog("Failed: \(error.localizedDescription)")
@@ -117,7 +136,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     return address
   }
   
-  func geoCode(location: CLLocation) {
+  func gotoCurrentLocation(location: CLLocation) {
     let geocoder = CLGeocoder()
     self.geocoder = geocoder
     
@@ -138,5 +157,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     })
   }
   
+  func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    // We can also customize the pin by using
+    var mkview = mapView.dequeueReusableAnnotationViewWithIdentifier("epcot")
+    if mkview == nil {
+      mkview = MKAnnotationView(annotation: annotation, reuseIdentifier: "epcot")
+    }
+    mkview!.image = UIImage(named: "disney-small")
+    mkview!.annotation = annotation
+    mkview!.canShowCallout = true
+    return mkview
+  }
 }
 
+// Alternative way to create an annoation
+// We are not using this here ... just an example
+class MyAnnotation: NSObject, MKAnnotation {
+  var coordinate: CLLocationCoordinate2D
+  
+  init(coordinate: CLLocationCoordinate2D) {
+    self.coordinate = coordinate
+  }
+
+  var title: String? {
+    return "title"
+  }
+  var subtitle: String? {
+    return nil
+  }
+}
