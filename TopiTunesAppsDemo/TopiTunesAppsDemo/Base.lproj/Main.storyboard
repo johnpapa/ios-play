@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,27 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="67" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="K1z-h3-GBV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="81" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="K1z-h3-GBV">
                                 <rect key="frame" x="0.0" y="20" width="320" height="462"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customcell" rowHeight="67" id="oif-Rb-9Bl" customClass="Custom_TableViewCell" customModule="TopiTunesAppsDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="320" height="67"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customcell" rowHeight="81" id="oif-Rb-9Bl" customClass="Custom_TableViewCell" customModule="TopiTunesAppsDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="320" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oif-Rb-9Bl" id="etH-Fb-UHj">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZK-Me-ZDg">
-                                                    <rect key="frame" x="8" y="8" width="54" height="54"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bZK-Me-ZDg">
+                                                    <rect key="frame" x="12" y="16" width="54" height="54"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="54" id="qj0-pZ-q0i"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-H3-DIr">
-                                                    <rect key="frame" x="70" y="24" width="242" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the title of the iTunes app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-H3-DIr">
+                                                    <rect key="frame" x="90" y="30" width="198" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bZK-Me-ZDg" firstAttribute="leading" secondItem="etH-Fb-UHj" secondAttribute="leadingMargin" constant="4" id="0HZ-KZ-gFt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bZK-Me-ZDg" secondAttribute="bottom" constant="3" id="HOJ-w9-Hvv"/>
+                                                <constraint firstItem="qZr-H3-DIr" firstAttribute="trailing" secondItem="etH-Fb-UHj" secondAttribute="trailingMargin" constant="8" id="JTl-ds-7iw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qZr-H3-DIr" secondAttribute="bottom" constant="22" id="Uxd-El-9yb"/>
+                                                <constraint firstItem="qZr-H3-DIr" firstAttribute="leading" secondItem="bZK-Me-ZDg" secondAttribute="trailing" constant="8" id="iQI-lJ-TZL"/>
+                                                <constraint firstItem="qZr-H3-DIr" firstAttribute="top" secondItem="etH-Fb-UHj" secondAttribute="topMargin" constant="22" id="pZa-zf-LeY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qZr-H3-DIr" secondAttribute="trailing" constant="24" id="qZd-NO-6oN"/>
+                                                <constraint firstItem="bZK-Me-ZDg" firstAttribute="top" secondItem="etH-Fb-UHj" secondAttribute="topMargin" constant="8" id="vjv-8S-WD8"/>
+                                                <constraint firstItem="qZr-H3-DIr" firstAttribute="leading" secondItem="bZK-Me-ZDg" secondAttribute="trailing" constant="24" id="wSN-pM-VHb"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="JTl-ds-7iw"/>
+                                                    <exclude reference="iQI-lJ-TZL"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="appImageView" destination="bZK-Me-ZDg" id="T4A-mQ-LAa"/>
@@ -60,7 +80,7 @@
                                             <action selector="stepChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Mte-6j-h2O"/>
                                         </connections>
                                     </stepper>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-5x-DDC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-5x-DDC">
                                         <rect key="frame" x="114" y="0.0" width="54" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

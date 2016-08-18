@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-  var apps: [App] = []
-  var limit: Int = 2 // default
+  var apps: [ITunesApp] = []
+  var limit: Int = 10 // default
   
   @IBOutlet var tableView: UITableView!
   @IBOutlet var stepper: UIStepper!
@@ -29,8 +29,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let url = NSURL(string: "https://itunes.apple.com/us/rss/topgrossingapplications/limit=\(limit)/json")!
     
     let session = NSURLSession.sharedSession()
-    
-    print("Starting")
     
     let task = session.dataTaskWithURL(url) { (data, response, error) in
       if let response = response {
@@ -62,8 +60,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(json["feed"])
             print(json["feed"]!.dynamicType)
             
-            // This does not run ... we will learn more about getting json from background to ui thread later.
-            
             guard let dict = json["feed"] as? NSDictionary else { return }
             guard let entries = dict["entry"] as? NSArray else { return }
             
@@ -71,9 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             for entry in entries {
               guard let entryDict = entry as? NSDictionary else { continue }
-              
               guard let titleDict = entryDict["title"] as? NSDictionary else { continue }
-              
               guard let label = titleDict["label"] as? String else { continue }
               
               print("*** label = \(label ?? " ")")
@@ -83,8 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               let imageUrl = image["label"]!! as! String // TODO: Why bang bang?
               print("image url = \(imageUrl)")
               
-              
-              self.apps.append(App(title: label, imageUrl: imageUrl))
+              self.apps.append(ITunesApp(title: label, imageUrl: imageUrl))
             }
             
             dispatch_async(dispatch_get_main_queue()) {
@@ -108,7 +101,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(json)
         print("*** ***")
       }
-      
       return json
     }
     catch (let parsingError) {
@@ -122,15 +114,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     super.viewDidLoad()
     stepper.value = Double(limit)
     limitLabel.text = String(limit)
-    
-    tableView.estimatedRowHeight = 85.0
-
+    tableView.estimatedRowHeight = 44.0
     tableView.rowHeight = UITableViewAutomaticDimension
-    
-    
-    //    self.tableView.delegate = self
-    //    self.tableView.dataSource = self
-    // Do any additional setup after loading the view, typically from a nib.
   }
   
   override func didReceiveMemoryWarning() {
@@ -139,43 +124,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
-    
     // grouped vertical sections of the tableview
-    
     return 1
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
-    
     // total row count goes here
-    
-    if section == 0 {
-      //
-    }
     return apps.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
     // at init/appear ... this runs for each visible cell that needs to render
-    
     let appcell = tableView.dequeueReusableCellWithIdentifier("customcell", forIndexPath: indexPath) as! Custom_TableViewCell
     
-    var idx: Int = 0
+    let idx: Int = indexPath.row
     
-    if indexPath.section == 0 {
-      idx = indexPath.row
-    }
-    
-    // app name
     let appname = apps[idx].title
-    
     print(appname)
     
     appcell.appTitle?.text = apps[idx].title
-    
     let url: String = (NSURL(string: apps[idx].imageUrl)?.absoluteString)!
     
     NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!, completionHandler: { (data, response, error) -> Void in
@@ -185,7 +152,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return
       }
       
-      dispatch_async(dispatch_get_main_queue(), { () -> Void in
+      dispatch_async(dispatch_get_main_queue(), { // () -> Void in
         let image = UIImage(data: data!)
         appcell.imageView?.image = image
       })
@@ -195,23 +162,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     return appcell
   }
   
-  
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    if section == 0 {
-      //
-    }
     return "iTunes Top Apps"
-  }
-  
-  
-}
-
-class App {
-  var title: String = ""
-  var imageUrl: String = ""
-  
-  init(title: String, imageUrl: String) {
-    self.title = title
-    self.imageUrl = imageUrl
   }
 }
