@@ -9,9 +9,12 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Contacts
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
   
+  @IBOutlet var mapView: MKMapView!
+  var geocoder: CLGeocoder? = nil
   var locationManager: CLLocationManager? = nil
   
   override func viewDidLoad() {
@@ -30,19 +33,47 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     self.checkAuthorization()
   }
   
+  @IBAction func epcotPressed(sender: UIButton) {
+    findAndMapEpcot()
+  }
+  
+  @IBAction func locationButton(sender: UIButton) {
+    findLocation()
+  }
+  
   func findLocation() {
     NSLog("Authorized")
     self.locationManager?.startUpdatingLocation()
+    //self.locationManager?.startMonitoringSignificantLocationChanges()
   }
   
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     NSLog("Finding locations ...")
-//    NSLog("\(locations)")
+    //    NSLog("\(locations)")
     for loc in locations {
       NSLog(loc.description)
     }
     manager.stopUpdatingLocation()
+    if let lastLocation = locations.last {
+      self.geoCode(lastLocation) // last is usually best
+      let region = MKCoordinateRegionMakeWithDistance(lastLocation.coordinate, 5000.0, 5000.0)
+      self.mapView.setRegion(region, animated: true)
+      self.mapView.mapType = MKMapType.Standard
+    }
   }
+  
+  func findAndMapEpcot() {
+    
+    let epcotLocation = CLLocation(latitude: 28.37, longitude: -81.55)
+    let region = MKCoordinateRegionMakeWithDistance(epcotLocation.coordinate, 5000.0, 5000.0)
+    self.mapView.mapType = MKMapType.Satellite
+    self.mapView.setRegion(region, animated: true)
+
+    let annotation = MKPointAnnotation()
+    annotation.title = "Epcot"
+    annotation.coordinate = epcotLocation.coordinate
+    self.mapView.addAnnotation(annotation)
+}
   
   func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
     NSLog("Failed: \(error.localizedDescription)")
@@ -73,6 +104,39 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     self.checkAuthorization()
   }
   
+  func postalAddressFromAddressDictionary(addressdictionary: Dictionary<NSObject,AnyObject>) -> CNMutablePostalAddress {
+    
+    let address = CNMutablePostalAddress()
+    
+    address.street = addressdictionary["Street"] as? String ?? ""
+    address.state = addressdictionary["State"] as? String ?? ""
+    address.city = addressdictionary["City"] as? String ?? ""
+    address.country = addressdictionary["Country"] as? String ?? ""
+    address.postalCode = addressdictionary["ZIP"] as? String ?? ""
+    
+    return address
+  }
+  
+  func geoCode(location: CLLocation) {
+    let geocoder = CLGeocoder()
+    self.geocoder = geocoder
+    
+    geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+      if let placemarks = placemarks {
+        print("*** Found \(placemarks.count) placemarks")
+        print("\(placemarks)")
+        let pm = placemarks[0]
+        let postalFormatter = CNPostalAddressFormatter()
+        let postalAddress = self.postalAddressFromAddressDictionary(pm.addressDictionary!)
+        let address = postalFormatter.stringFromPostalAddress(postalAddress)
+        print("address")
+        print(address)
+      }
+      if let error = error {
+        print("geocoding error, uh oh: \(error)")
+      }
+    })
+  }
   
 }
 

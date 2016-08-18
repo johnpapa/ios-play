@@ -1,25 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocationDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6By-hV-MlH">
+                                <rect key="frame" x="16" y="20" width="136" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="YxM-xF-pma"/>
+                                </constraints>
+                                <state key="normal" title="Get Location"/>
+                                <connections>
+                                    <action selector="locationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XKh-Al-vin"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-FJ-FpE">
+                                <rect key="frame" x="16" y="58" width="288" height="502"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kjL-Nh-93R"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zR-9D-urG">
+                                <rect key="frame" x="164" y="20" width="136" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="vJB-68-xPN"/>
+                                </constraints>
+                                <state key="normal" title="Epcot"/>
+                                <connections>
+                                    <action selector="epcotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ruo-Fd-XVb"/>
+                                    <action selector="locationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4WM-3r-XEA"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dyJ-FJ-FpE" secondAttribute="bottom" constant="8" id="4ha-k6-V14"/>
+                            <constraint firstItem="dyJ-FJ-FpE" firstAttribute="top" secondItem="6By-hV-MlH" secondAttribute="bottom" constant="8" id="4sF-YR-5L7"/>
+                            <constraint firstItem="6By-hV-MlH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FQm-gI-Iei"/>
+                            <constraint firstItem="4zR-9D-urG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KGc-q4-Pmi"/>
+                            <constraint firstItem="6By-hV-MlH" firstAttribute="leading" secondItem="dyJ-FJ-FpE" secondAttribute="leading" id="Ta3-nt-xxe"/>
+                            <constraint firstItem="dyJ-FJ-FpE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZoH-GE-7sQ"/>
+                            <constraint firstItem="4zR-9D-urG" firstAttribute="leading" secondItem="6By-hV-MlH" secondAttribute="trailing" constant="12" id="bDT-SK-Eoa"/>
+                            <constraint firstItem="dyJ-FJ-FpE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="t3q-XI-30G"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapView" destination="dyJ-FJ-FpE" id="xih-oG-h4p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="325" y="226"/>
         </scene>
     </scenes>
 </document>
