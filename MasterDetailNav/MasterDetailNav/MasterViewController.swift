@@ -47,6 +47,8 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
  
     appcell.textLabel?.text = "\(guests[i].name!) - \(String(guests[i].age!))"
     
+    appcell.accessoryType = .DisclosureIndicator
+    
     return appcell
   }
   

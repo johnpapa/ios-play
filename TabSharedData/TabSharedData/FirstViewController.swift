@@ -64,7 +64,36 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-
+  
+  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
+  
+//  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//    if editingStyle == .Delete {
+//      people.removeAtIndex(indexPath.row)
+//      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic) // or .Automatic
+//    }
+//  }
+  
+  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+    let delete = UITableViewRowAction(style: .Default, title: "Delete It") { action, index in
+      print("deleted")
+      self.people.removeAtIndex(indexPath.row)
+      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic) // or .Automatic
+    }
+    delete.backgroundColor = UIColor.redColor()
+    
+    let more = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "More" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+      print("mored")
+      tableView.setEditing(false, animated: true)
+    })
+    more.backgroundColor = UIColor.blueColor()
+    
+    return [delete, more]
+  }
+  
 }
+
+
 
