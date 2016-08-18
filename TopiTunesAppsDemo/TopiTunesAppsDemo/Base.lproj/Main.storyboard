@@ -72,8 +72,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="VuG-5X-Lbg"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RR6-d8-AFE">
-                                <rect key="frame" x="16" y="528" width="288" height="29"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RR6-d8-AFE">
+                                <rect key="frame" x="16" y="528" width="288" height="30"/>
                                 <subviews>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="O6b-xw-gbj">
                                         <rect key="frame" x="0.0" y="0.0" width="94" height="29"/>
@@ -81,14 +81,14 @@
                                             <action selector="stepChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Mte-6j-h2O"/>
                                         </connections>
                                     </stepper>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-5x-DDC">
-                                        <rect key="frame" x="114" y="0.0" width="54" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-5x-DDC">
+                                        <rect key="frame" x="114" y="0.0" width="54" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-uv-6gH">
-                                        <rect key="frame" x="188" y="0.0" width="100" height="29"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-uv-6gH">
+                                        <rect key="frame" x="188" y="0.0" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="je2-jK-MJw"/>
                                         </constraints>
@@ -99,6 +99,9 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Usj-ph-vJI">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -108,11 +111,14 @@
                             <constraint firstItem="K1z-h3-GBV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UAR-Wi-vhq"/>
                             <constraint firstAttribute="leadingMargin" secondItem="RR6-d8-AFE" secondAttribute="leading" id="YuT-8P-D8o"/>
                             <constraint firstItem="K1z-h3-GBV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bbf-UB-jnp"/>
+                            <constraint firstItem="Usj-ph-vJI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hzC-Ff-LZh"/>
+                            <constraint firstItem="Usj-ph-vJI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nUI-z2-gYh"/>
                             <constraint firstItem="RR6-d8-AFE" firstAttribute="top" secondItem="K1z-h3-GBV" secondAttribute="bottom" constant="46" id="ttM-Wk-Doj"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Usj-ph-vJI" id="7Xi-CS-fdg"/>
                         <outlet property="limitLabel" destination="B6P-5x-DDC" id="je6-cq-1Hj"/>
                         <outlet property="stepper" destination="O6b-xw-gbj" id="1FA-wr-1iO"/>
                         <outlet property="tableView" destination="K1z-h3-GBV" id="BKD-qk-HbV"/>

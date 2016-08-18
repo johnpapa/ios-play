@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   var apps: [ITunesApp] = []
   var limit: Int = 10 // default
   
+  @IBOutlet var activityIndicator: UIActivityIndicatorView!
   @IBOutlet var tableView: UITableView!
   @IBOutlet var stepper: UIStepper!
   @IBOutlet var limitLabel: UILabel!
@@ -29,7 +30,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let url = NSURL(string: "https://itunes.apple.com/us/rss/topgrossingapplications/limit=\(limit)/json")!
     
     let session = NSURLSession.sharedSession()
-    
+ 
+    activityIndicator.startAnimating()
     let task = session.dataTaskWithURL(url) { (data, response, error) in
       if let response = response {
         print("Data encoding: \(response.textEncodingName)")
@@ -37,6 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       
       if let error = error {
         NSLog("Got an error!: \(error.localizedDescription)")
+        self.activityIndicator.stopAnimating()
         return
       }
       
@@ -74,7 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               
               guard let images = entryDict["im:image"] as? NSArray else { continue }
               let image = images[0] as! NSDictionary
-              let imageUrl = image["label"]! as! String 
+              let imageUrl = image["label"]! as! String
               print("image url = \(imageUrl)")
               
               self.apps.append(ITunesApp(title: label, imageUrl: imageUrl))
@@ -83,8 +86,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             dispatch_async(dispatch_get_main_queue()) {
               print(self.apps[0].title)
               self.tableView.reloadData()
+              self.activityIndicator.stopAnimating() // TODO: where else do i stop?
             }
-            
           }
         }
       }
@@ -138,8 +141,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let appcell = tableView.dequeueReusableCellWithIdentifier("customcell", forIndexPath: indexPath) as! Custom_TableViewCell
     
     let idx: Int = indexPath.row
-    
-    let appname = apps[idx].title
+    let appname = apps[idx].title // TODO: check for null
     print(appname)
     
     appcell.appTitle?.text = apps[idx].title
