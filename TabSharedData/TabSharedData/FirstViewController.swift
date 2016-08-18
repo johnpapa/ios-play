@@ -41,9 +41,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cell")
-    cell?.textLabel?.text = people[indexPath.row].name
-    return cell!
+    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    cell.textLabel?.text = people[indexPath.row].name
+    cell.accessoryType = .DisclosureIndicator
+    return cell
   }
 
   override func viewDidLoad() {

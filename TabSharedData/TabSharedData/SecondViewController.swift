@@ -30,9 +30,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cell")
-    cell?.textLabel?.text = String(people[indexPath.row].age)
-    return cell!
+    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    cell.textLabel?.text = String(people[indexPath.row].age)
+    cell.accessoryType = .DisclosureIndicator
+    return cell
   }
   
   deinit {
