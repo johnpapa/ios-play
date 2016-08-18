@@ -8,12 +8,6 @@
 
 import UIKit
 
-
-// This notification might be in a message bus or notification class / file
-let DATA_CHANGED = NSNotification(name: "data changed", object: nil)
-
-
-
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   @IBAction func changeDataButton(sender: UIButton) {
     let d = DataService.shared.people[3]

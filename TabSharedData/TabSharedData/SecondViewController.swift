@@ -38,6 +38,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
   deinit {
     NSNotificationCenter.defaultCenter().removeObserver(self)
   }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.

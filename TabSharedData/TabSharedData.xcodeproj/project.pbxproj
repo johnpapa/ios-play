@@ -15,6 +15,7 @@
 		818EE0241D663721006180B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EE0221D663721006180B1 /* LaunchScreen.storyboard */; };
 		818EE02C1D663804006180B1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE02B1D663804006180B1 /* DataService.swift */; };
 		818EE02E1D66386A006180B1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE02D1D66386A006180B1 /* Person.swift */; };
+		818EE0301D66470C006180B1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE02F1D66470C006180B1 /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		818EE0251D663721006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		818EE02B1D663804006180B1 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		818EE02D1D66386A006180B1 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		818EE02F1D66470C006180B1 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				818EE0251D663721006180B1 /* Info.plist */,
 				818EE02B1D663804006180B1 /* DataService.swift */,
 				818EE02D1D66386A006180B1 /* Person.swift */,
+				818EE02F1D66470C006180B1 /* Notifications.swift */,
 			);
 			path = TabSharedData;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818EE0301D66470C006180B1 /* Notifications.swift in Sources */,
 				818EE01C1D663721006180B1 /* SecondViewController.swift in Sources */,
 				818EE02E1D66386A006180B1 /* Person.swift in Sources */,
 				818EE0181D663721006180B1 /* AppDelegate.swift in Sources */,
