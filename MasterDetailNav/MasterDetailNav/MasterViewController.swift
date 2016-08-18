@@ -10,69 +10,62 @@ import UIKit
 
 class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-  var numbers: [Int] = [3,4,5,62,3]
+  var guests: [Guest] = [
+    Guest(name: "John", age: 22),
+    Guest(name: "Colleen", age: 43),
+    Guest(name: "Haley", age: 20),
+    Guest(name: "Madelyn", age: 17),
+    Guest(name: "Ella", age: 12),
+    Guest(name: "Landon", age: 32)
+  ]
   
   @IBOutlet var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
-
+  
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
-    
     // grouped vertical sections of the tableview
-    
     return 1
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    
     // total row count goes here
-    
-    if section == 0 {
-      //
-    }
-    return numbers.count
+    return guests.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
     // at init/appear ... this runs for each visible cell that needs to render
-    
     let appcell = tableView.dequeueReusableCellWithIdentifier("customcell", forIndexPath: indexPath)
-    
-    var idx: Int = 0
-    
-    if indexPath.section == 0 {
-      idx = indexPath.row
-    }
+    let i: Int = indexPath.row
  
-    appcell.textLabel?.text = String(numbers[idx])
+    appcell.textLabel?.text = "\(guests[i].name!) - \(String(guests[i].age!))"
     
     return appcell
   }
   
-  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-      print("hit this row!")
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let detail = self.storyboard!.instantiateViewControllerWithIdentifier("detailViewController") as! DetailViewController
     
-    
-    
     self.navigationController?.pushViewController(detail, animated: true)
+    
+    detail.getData = { [ weak self ] in
+      return self!.guests[ indexPath.row ]
+    }
+
+    detail.updateData = { [ weak self ] (guest: Guest) in
+      self!.guests[indexPath.row] = guest
+      self?.tableView?.reloadData()
+    }
   }
-  
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return "Numbers"
   }
-
 }
-

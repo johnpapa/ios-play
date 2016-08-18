@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522788971D65221600675886 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522788961D65221600675886 /* Guest.swift */; };
 		818EDF781D65099A006180B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF771D65099A006180B1 /* AppDelegate.swift */; };
 		818EDF7A1D65099A006180B1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF791D65099A006180B1 /* MasterViewController.swift */; };
 		818EDF7D1D65099A006180B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF7B1D65099A006180B1 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		522788961D65221600675886 /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		818EDF741D65099A006180B1 /* MasterDetailNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDetailNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818EDF771D65099A006180B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		818EDF791D65099A006180B1 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				818EDF801D65099A006180B1 /* LaunchScreen.storyboard */,
 				818EDF831D65099A006180B1 /* Info.plist */,
 				818EDF891D650A9B006180B1 /* DetailViewController.swift */,
+				522788961D65221600675886 /* Guest.swift */,
 			);
 			path = MasterDetailNav;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522788971D65221600675886 /* Guest.swift in Sources */,
 				818EDF8A1D650A9B006180B1 /* DetailViewController.swift in Sources */,
 				818EDF7A1D65099A006180B1 /* MasterViewController.swift in Sources */,
 				818EDF781D65099A006180B1 /* AppDelegate.swift in Sources */,
@@ -257,7 +261,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MasterDetailNav/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.disney.MasterDetailNav;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yournamegoeshere.MasterDetailNav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -268,7 +272,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MasterDetailNav/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.disney.MasterDetailNav;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yournamegoeshere.MasterDetailNav;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -292,6 +296,7 @@
 				818EDF881D65099A006180B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

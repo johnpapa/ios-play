@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fo1-Z2-IVL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fo1-Z2-IVL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Master View Controller-->
+        <!--Guests-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MasterViewController" customModule="MasterDetailNav" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                             <constraint firstItem="Z0k-st-ckY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kHC-Rs-JRY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="icv-Rd-FMr"/>
+                    <navigationItem key="navigationItem" title="Guests" id="icv-Rd-FMr"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="Z0k-st-ckY" id="eJh-wg-hTn"/>
@@ -67,15 +67,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eex-R6-x8C">
-                                <rect key="frame" x="51" y="51" width="212" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f29-3p-M7B">
+                                <rect key="frame" x="16" y="31" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="32K-SW-B27">
+                                <rect key="frame" x="16" y="60" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blF-H0-nby">
+                                <rect key="frame" x="16" y="105" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eex-R6-x8C">
+                                <rect key="frame" x="16" y="129" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f29-3p-M7B" firstAttribute="top" secondItem="qbP-Y9-dFt" secondAttribute="bottom" constant="11" id="5BX-jw-7RC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="32K-SW-B27" secondAttribute="trailing" id="DCG-sq-Rgc"/>
+                            <constraint firstItem="blF-H0-nby" firstAttribute="leading" secondItem="Aua-XS-roV" secondAttribute="leadingMargin" id="DXw-pp-VcQ"/>
+                            <constraint firstItem="eex-R6-x8C" firstAttribute="leading" secondItem="Aua-XS-roV" secondAttribute="leadingMargin" id="RT9-5h-gGN"/>
+                            <constraint firstItem="eex-R6-x8C" firstAttribute="trailing" secondItem="Aua-XS-roV" secondAttribute="trailingMargin" id="WAn-Eh-WE2"/>
+                            <constraint firstItem="blF-H0-nby" firstAttribute="top" secondItem="32K-SW-B27" secondAttribute="bottom" constant="15" id="Zbt-mK-iDL"/>
+                            <constraint firstItem="eex-R6-x8C" firstAttribute="top" secondItem="blF-H0-nby" secondAttribute="bottom" constant="3" id="c0V-JF-dMf"/>
+                            <constraint firstItem="32K-SW-B27" firstAttribute="leading" secondItem="Aua-XS-roV" secondAttribute="leadingMargin" id="djN-Gg-4li"/>
+                            <constraint firstItem="32K-SW-B27" firstAttribute="top" secondItem="f29-3p-M7B" secondAttribute="bottom" constant="8" id="lsE-9C-uD3"/>
+                            <constraint firstItem="f29-3p-M7B" firstAttribute="leading" secondItem="Aua-XS-roV" secondAttribute="leadingMargin" id="maA-Kw-Evp"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="ageText" destination="eex-R6-x8C" id="qLu-tv-GXj"/>
+                        <outlet property="nameText" destination="32K-SW-B27" id="Kbs-fA-3BT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qX-ux-gJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
