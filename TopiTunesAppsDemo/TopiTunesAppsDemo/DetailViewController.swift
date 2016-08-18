@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
   var itunesApp: ITunesApp? = nil
   
   @IBOutlet var titleLabel: UILabel!
-  @IBOutlet var summaryLabel: UILabel!
+  @IBOutlet var summaryTextView: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
 //      print(itunesApp!.title)
 //      print(itunesApp!.summary)
       self.titleLabel.text = itunesApp!.title
-      self.summaryLabel.text = itunesApp!.summary
+      self.summaryTextView.text = itunesApp!.summary
     }
   }
   
