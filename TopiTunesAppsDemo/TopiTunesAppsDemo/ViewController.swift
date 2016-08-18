@@ -73,8 +73,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               print("*** label = \(label ?? " ")")
               
               guard let images = entryDict["im:image"] as? NSArray else { continue }
-              let image = images[0]
-              let imageUrl = image["label"]!! as! String // TODO: Why bang bang?
+              let image = images[0] as! NSDictionary
+              let imageUrl = image["label"]! as! String 
               print("image url = \(imageUrl)")
               
               self.apps.append(ITunesApp(title: label, imageUrl: imageUrl))
@@ -153,8 +153,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       
       dispatch_async(dispatch_get_main_queue(), { // () -> Void in
         let image = UIImage(data: data!)
-        appcell.imageView?.image = image
-        appcell.layoutSubviews()
+        appcell.appImageView?.image = image
+//        appcell.layoutSubviews() // We don't need this here, but if we have rendering issues, we can
       })
       
     }).resume()

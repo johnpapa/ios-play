@@ -32,6 +32,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bZK-Me-ZDg">
                                                     <rect key="frame" x="12" y="16" width="54" height="54"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="54" id="7Ae-eR-5Sa"/>
                                                         <constraint firstAttribute="width" constant="54" id="qj0-pZ-q0i"/>
                                                     </constraints>
                                                 </imageView>
