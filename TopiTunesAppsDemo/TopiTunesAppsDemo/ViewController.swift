@@ -74,13 +74,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               guard let label = titleDict["label"] as? String else { continue }
               
               print("*** label = \(label ?? " ")")
-              
+
+              guard let summaryDict = entryDict["summary"] as? NSDictionary else { continue }
+              guard let summary = summaryDict["label"] as? String else { continue }
+
               guard let images = entryDict["im:image"] as? NSArray else { continue }
               let image = images[0] as! NSDictionary
               let imageUrl = image["label"]! as! String
               print("image url = \(imageUrl)")
               
-              self.apps.append(ITunesApp(title: label, imageUrl: imageUrl))
+              self.apps.append(ITunesApp(title: label, imageUrl: imageUrl, summary: summary))
             }
             
             dispatch_async(dispatch_get_main_queue()) {
@@ -158,7 +161,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         appcell.appImageView?.image = image
 //        appcell.layoutSubviews() // We don't need this here, but if we have rendering issues, we can
       })
-      
     }).resume()
     
     return appcell
@@ -166,5 +168,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return "iTunes Top Apps"
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let detail = self.storyboard!.instantiateViewControllerWithIdentifier("detailViewController") as! DetailViewController
+    
+    self.navigationController?.pushViewController(detail, animated: true)
+    
+    detail.getData = { [ weak self ] in
+      return self!.apps[ indexPath.row ]
+    }
   }
 }

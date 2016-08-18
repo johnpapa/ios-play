@@ -14,6 +14,7 @@
 		818EDF3F1D64BBD9006180B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF3E1D64BBD9006180B1 /* Assets.xcassets */; };
 		818EDF421D64BBD9006180B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF401D64BBD9006180B1 /* LaunchScreen.storyboard */; };
 		818EDF6A1D64E357006180B1 /* Custom_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */; };
+		818EE0321D6650BF006180B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE0311D6650BF006180B1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		818EDF411D64BBD9006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		818EDF431D64BBD9006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_TableViewCell.swift; sourceTree = "<group>"; };
+		818EE0311D6650BF006180B1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				818EDF431D64BBD9006180B1 /* Info.plist */,
 				818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */,
 				5227889A1D653FEC00675886 /* ITunesApp.swift */,
+				818EE0311D6650BF006180B1 /* DetailViewController.swift */,
 			);
 			path = TopiTunesAppsDemo;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				818EDF3A1D64BBD8006180B1 /* ViewController.swift in Sources */,
 				818EDF6A1D64E357006180B1 /* Custom_TableViewCell.swift in Sources */,
+				818EE0321D6650BF006180B1 /* DetailViewController.swift in Sources */,
 				818EDF381D64BBD8006180B1 /* AppDelegate.swift in Sources */,
 				5227889B1D653FEC00675886 /* ITunesApp.swift in Sources */,
 			);

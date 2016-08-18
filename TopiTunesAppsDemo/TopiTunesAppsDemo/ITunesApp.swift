@@ -11,9 +11,11 @@ import Foundation
 class ITunesApp {
   var title: String = ""
   var imageUrl: String = ""
+  var summary: String = ""
   
-  init(title: String, imageUrl: String) {
+  init(title: String, imageUrl: String, summary: String) {
     self.title = title
     self.imageUrl = imageUrl
+    self.summary = summary
   }
 }
