@@ -45,7 +45,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
   func findLocation() {
     NSLog("Authorized")
     self.locationManager?.startUpdatingLocation()
-    //self.locationManager?.startMonitoringSignificantLocationChanges()
+    self.locationManager?.startMonitoringSignificantLocationChanges() // every 5 minutes +/-
   }
   
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
