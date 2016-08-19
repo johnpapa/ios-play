@@ -21,10 +21,12 @@ class DetailViewController: UIViewController {
     // Do any additional setup after loading the view.
     if let closure = self.getData {
       itunesApp = closure()
-//      print(itunesApp!.title)
-//      print(itunesApp!.summary)
       self.titleLabel.text = itunesApp!.title
       self.summaryTextView.text = itunesApp!.summary
+      
+      // Ratings url
+//      let ratingUrl = NSURL(string: "https://itunes.apple.com/lookup?id=" + localData!.id!)!
+
     }
   }
   

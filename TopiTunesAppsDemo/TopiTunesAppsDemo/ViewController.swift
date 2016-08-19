@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-  
   var apps: [ITunesApp] = []
   var limit: Int = 10 // default
   
@@ -71,20 +70,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               
               for entry in entries {
                 guard let entryDict = entry as? NSDictionary else { continue }
+                // Get the id
+                guard let idDict = entryDict["id"] as? NSDictionary else { continue }
+                guard let idAttrDict = idDict["attributes"] as? NSDictionary else { continue }
+                guard let id = idAttrDict["im:id"] as? String else { continue }
+                // Get the title
                 guard let titleDict = entryDict["title"] as? NSDictionary else { continue }
-                guard let label = titleDict["label"] as? String else { continue }
-                
-                print("*** label = \(label ?? " ")")
-                
+                guard let title = titleDict["label"] as? String else { continue }
+                // Get the price
+                guard let priceDict = entryDict["im:price"] as? NSDictionary else { continue }
+                guard let priceAttrDict = priceDict["attributes"] as? NSDictionary else { continue }
+                guard let price = Double(priceAttrDict["amount"] as! String) else { continue }
+                // Get the developer
+                guard let developerDict = entryDict["im:artist"] as? NSDictionary else { continue }
+                guard let developer = developerDict["label"] as? String else { continue }
+                // Get the summary
                 guard let summaryDict = entryDict["summary"] as? NSDictionary else { continue }
                 guard let summary = summaryDict["label"] as? String else { continue }
-                
+                // Get the image
                 guard let images = entryDict["im:image"] as? NSArray else { continue }
                 let image = images[0] as! NSDictionary
                 let imageUrl = image["label"]! as! String
-                print("image url = \(imageUrl)")
-                
-                self.apps.append(ITunesApp(title: label, imageUrl: imageUrl, summary: summary))
+                // Create the ITunesApp
+                self.apps.append(ITunesApp(id: id, title: title, imageUrl: imageUrl, summary: summary, price: price, developer: developer))
               }
               
               dispatch_async(dispatch_get_main_queue()) {
@@ -185,8 +193,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let idx: Int = indexPath.row
     let appname = apps[idx].title // TODO: check for null
     print(appname)
-    
+
+    //title
     appcell.appTitle?.text = apps[idx].title
+    //price
+    let p = apps[idx].price == 0.0 ? "Free" : String(apps[idx].price)
+    appcell.appPrice?.text = p
+    //developer
+    appcell.appDeveloper?.text = apps[idx].developer
     let url: String = (NSURL(string: apps[idx].imageUrl)?.absoluteString)!
     
     // Get the image url

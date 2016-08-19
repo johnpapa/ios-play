@@ -12,7 +12,8 @@ class Custom_TableViewCell: UITableViewCell {
   
   @IBOutlet var appImageView: UIImageView!
   @IBOutlet var appTitle: UILabel!
-  
+  @IBOutlet var appDeveloper: UILabel!
+  @IBOutlet var appPrice: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()
