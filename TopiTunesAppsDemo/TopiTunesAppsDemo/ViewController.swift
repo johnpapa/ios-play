@@ -66,33 +66,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               guard let dict = json["feed"] as? NSDictionary else { return }
               guard let entries = dict["entry"] as? NSArray else { return }
               
-              print(dict["entry"])
-              
               for entry in entries {
-                guard let entryDict = entry as? NSDictionary else { continue }
-                // Get the id
-                guard let idDict = entryDict["id"] as? NSDictionary else { continue }
-                guard let idAttrDict = idDict["attributes"] as? NSDictionary else { continue }
-                guard let id = idAttrDict["im:id"] as? String else { continue }
-                // Get the title
-                guard let titleDict = entryDict["title"] as? NSDictionary else { continue }
-                guard let title = titleDict["label"] as? String else { continue }
-                // Get the price
-                guard let priceDict = entryDict["im:price"] as? NSDictionary else { continue }
-                guard let priceAttrDict = priceDict["attributes"] as? NSDictionary else { continue }
-                guard let price = Double(priceAttrDict["amount"] as! String) else { continue }
-                // Get the developer
-                guard let developerDict = entryDict["im:artist"] as? NSDictionary else { continue }
-                guard let developer = developerDict["label"] as? String else { continue }
-                // Get the summary
-                guard let summaryDict = entryDict["summary"] as? NSDictionary else { continue }
-                guard let summary = summaryDict["label"] as? String else { continue }
-                // Get the image
-                guard let images = entryDict["im:image"] as? NSArray else { continue }
-                let image = images[0] as! NSDictionary
-                let imageUrl = image["label"]! as! String
-                // Create the ITunesApp
-                self.apps.append(ITunesApp(id: id, title: title, imageUrl: imageUrl, summary: summary, price: price, developer: developer))
+                // Loop through the crap and create apps
+                guard let e =  entry as? NSDictionary else { continue }
+                let iTunesApp = self.parseAndCreateITunesApp(e)
+                self.apps.append(iTunesApp!)
               }
               
               dispatch_async(dispatch_get_main_queue()) {
@@ -102,9 +80,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               }
             }
           }
-//        } catch (let error) {
-//          print("the big 'DO' caught an error")
-//          print(error)
         }
       }
       else if let error = error {
@@ -127,21 +102,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       }
     }
     task.resume()
+  }
+  
+  func parseAndCreateITunesApp (entryDict: NSDictionary) -> ITunesApp? {
+    // guard let entryDict = entry as? NSDictionary else { return nil }
+
+    // Get the id
+    guard let idDict = entryDict["id"] as? NSDictionary else { return nil }
+    guard let idAttrDict = idDict["attributes"] as? NSDictionary else { return nil }
+    guard let id = idAttrDict["im:id"] as? String  else { return nil }
     
-//    else if let error = error {
-//      let message = "unable to load the apps. \(error.localizedDescription)"
-//      NSLog(message)
-//      let alertVC = UIAlertController(title: "error loading",
-//                                  message: message,
-//                                  preferredStyle: .Alert)
-//      let ok = UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
-//        NSLog("Ok pressed")
-//      })
-//      self.presentViewController(alertVC, animated: true, completion: { 
-//        // do something if you want
-//        // this happens when it is done presenting, not when they have hit OK
-//      })
-//    }
+    // Get the title
+    guard let titleDict = entryDict["title"] as? NSDictionary else { return nil }
+    guard let title = titleDict["label"] as? String else { return nil }
+    
+    // Get the price
+    guard let priceDict = entryDict["im:price"] as? NSDictionary else { return nil }
+    guard let priceAttrDict = priceDict["attributes"] as? NSDictionary else { return nil }
+    guard let price = Double(priceAttrDict["amount"] as! String) else { return nil }
+    // Get the developer
+    guard let developerDict = entryDict["im:artist"] as? NSDictionary else { return nil }
+    guard let developer = developerDict["label"] as? String else { return nil }
+    // Get the summary
+    guard let summaryDict = entryDict["summary"] as? NSDictionary else { return nil }
+    guard let summary = summaryDict["label"] as? String else { return nil }
+    // Get the image
+    guard let images = entryDict["im:image"] as? NSArray else { return nil }
+    let image = images[0] as! NSDictionary
+    let imageUrl = image["label"]! as! String
+    
+    let iTunesApp = ITunesApp(id: id, title: title, imageUrl: imageUrl, summary: summary, price: price, developer: developer)
+    return iTunesApp
   }
   
   func parseJson(data: NSData) -> [String: AnyObject]? {
