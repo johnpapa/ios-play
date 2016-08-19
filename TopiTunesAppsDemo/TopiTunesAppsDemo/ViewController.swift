@@ -35,10 +35,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     self.overlayView.hidden = false
     let task = session.dataTaskWithURL(url) { (data, response, error) in
       if let data = data {
-        if let response = response {
-          print("Data encoding: \(response.textEncodingName)")
-        }
-        
         if let error = error {
           NSLog("Got an error!: \(error.localizedDescription)")
           self.overlayView.hidden = true
@@ -46,25 +42,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         do {
-          NSLog("Got \(data.length) bytes.")
-          let str = String(data: data, encoding: NSISOLatin1StringEncoding)
-          
-          print("*** Here are the string contents:")
-          print(str)
-          print("*** ***")
-          
           let httpResponse = response as! NSHTTPURLResponse
           let statusCode = httpResponse.statusCode
-          
           if (statusCode == 200) {
-            print("Status code = \(statusCode)")
-            print("Everyone is fine, file downloaded successfully.")
-            
-            let possibleJson = self.parseJson(data)
+            let possibleJson = JSONParser.parseJson(data)
             if let json = possibleJson {
-              print(json["feed"])
-              print(json["feed"]!.dynamicType)
-              
               guard let dict = json["feed"] as? NSDictionary else { return }
               guard let entries = dict["entry"] as? NSArray else { return }
               
@@ -76,7 +58,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               }
               
               dispatch_async(dispatch_get_main_queue()) {
-                print(self.apps[0].title)
                 self.tableView.reloadData()
                 self.overlayView.hidden = true
               }
@@ -86,29 +67,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       }
       else if let error = error {
         let message = "unable to load the apps. \(error.localizedDescription)"
-        NSLog(message)
-        let alertVC = UIAlertController(title: "error loading",
-                                        message: message,
-                                        preferredStyle: .Alert)
-        let ok = UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
-          NSLog("Ok pressed")
-        })
-        alertVC.addAction(ok)
-        self.presentViewController(alertVC, animated: true, completion: {
-          // do something if you want
-          // this happens when it is done presenting, not when they have hit OK
-        })
-        dispatch_async(dispatch_get_main_queue()) {
-          self.overlayView.hidden = true
-        }
+        self.displayAlertView(message)
       }
     }
     task.resume()
   }
   
+  func displayAlertView(message: String) {
+    let alertVC = UIAlertController(title: "error loading",
+                                    message: message,
+                                    preferredStyle: .Alert)
+    let ok = UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
+      NSLog("Ok pressed")
+    })
+    alertVC.addAction(ok)
+    self.presentViewController(alertVC, animated: true, completion: {
+      // do something if you want
+      // this happens when it is done presenting, not when they have hit OK
+    })
+    dispatch_async(dispatch_get_main_queue()) {
+      self.overlayView.hidden = true
+    }
+  }
+  
   func parseAndCreateITunesApp (entryDict: NSDictionary) -> ITunesApp? {
-    // guard let entryDict = entry as? NSDictionary else { return nil }
-
     // Get the id
     guard let idDict = entryDict["id"] as? NSDictionary else { return nil }
     guard let idAttrDict = idDict["attributes"] as? NSDictionary else { return nil }
@@ -136,24 +118,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let iTunesApp = ITunesApp(id: id, title: title, imageUrl: imageUrl, summary: summary, price: price, developer: developer)
     return iTunesApp
   }
-  
-  func parseJson(data: NSData) -> [String: AnyObject]? {
-    let options = NSJSONReadingOptions()
-    do {
-      let json = try NSJSONSerialization.JSONObjectWithData(data, options: options) as? [String: AnyObject]
-      if let json = json {
-        print("*** Here is the JSON")
-        print(json)
-        print("*** ***")
-      }
-      return json
-    }
-    catch (let parsingError) {
-      print(parsingError)
-    }
-    return nil
-  }
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5224AF211D67C9330026417B /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224AF201D67C9330026417B /* JSONParser.swift */; };
 		5227889B1D653FEC00675886 /* ITunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227889A1D653FEC00675886 /* ITunesApp.swift */; };
 		818EDF381D64BBD8006180B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF371D64BBD8006180B1 /* AppDelegate.swift */; };
 		818EDF3A1D64BBD8006180B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF391D64BBD8006180B1 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5224AF201D67C9330026417B /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		5227889A1D653FEC00675886 /* ITunesApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesApp.swift; sourceTree = "<group>"; };
 		818EDF341D64BBD8006180B1 /* TopiTunesAppsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopiTunesAppsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818EDF371D64BBD8006180B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */,
 				5227889A1D653FEC00675886 /* ITunesApp.swift */,
 				818EE0311D6650BF006180B1 /* DetailViewController.swift */,
+				5224AF201D67C9330026417B /* JSONParser.swift */,
 			);
 			path = TopiTunesAppsDemo;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				818EDF3A1D64BBD8006180B1 /* ViewController.swift in Sources */,
 				818EDF6A1D64E357006180B1 /* Custom_TableViewCell.swift in Sources */,
+				5224AF211D67C9330026417B /* JSONParser.swift in Sources */,
 				818EE0321D6650BF006180B1 /* DetailViewController.swift in Sources */,
 				818EDF381D64BBD8006180B1 /* AppDelegate.swift in Sources */,
 				5227889B1D653FEC00675886 /* ITunesApp.swift in Sources */,
@@ -411,6 +415,7 @@
 				818EE0501D674C46006180B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

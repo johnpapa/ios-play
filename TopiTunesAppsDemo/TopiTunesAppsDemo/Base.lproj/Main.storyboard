@@ -245,20 +245,47 @@
                                     <constraint firstItem="tcB-Zg-Dct" firstAttribute="leading" secondItem="eyG-vI-23x" secondAttribute="leading" id="hZq-31-NJR"/>
                                 </constraints>
                             </stackView>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jb9-DT-xpG" userLabel="Loading Overlay View">
+                                <rect key="frame" x="-4" y="28" width="328" height="540"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lIS-Xb-Kas">
+                                        <rect key="frame" x="146" y="251" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading …" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-zm-qhR">
+                                        <rect key="frame" x="122.5" y="296" width="84.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="lIS-Xb-Kas" firstAttribute="centerY" secondItem="jb9-DT-xpG" secondAttribute="centerY" id="A24-XK-Zz2"/>
+                                    <constraint firstItem="lIS-Xb-Kas" firstAttribute="centerX" secondItem="jb9-DT-xpG" secondAttribute="centerX" id="Xci-8z-SZc"/>
+                                    <constraint firstItem="2gh-zm-qhR" firstAttribute="centerX" secondItem="jb9-DT-xpG" secondAttribute="centerX" id="Yij-VF-m6Z"/>
+                                    <constraint firstItem="2gh-zm-qhR" firstAttribute="top" secondItem="lIS-Xb-Kas" secondAttribute="bottom" constant="8" id="cwN-RJ-Xj5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eyG-vI-23x" firstAttribute="top" secondItem="lz5-lc-Qga" secondAttribute="bottom" constant="8" id="0tK-p0-1Xo"/>
                             <constraint firstItem="lz5-lc-Qga" firstAttribute="leading" secondItem="AIa-41-q3w" secondAttribute="leadingMargin" constant="8" id="4j6-nR-P30"/>
+                            <constraint firstItem="jb9-DT-xpG" firstAttribute="leading" secondItem="AIa-41-q3w" secondAttribute="leadingMargin" constant="-20" id="Bue-Xb-RDf"/>
                             <constraint firstItem="zMA-2x-1Vf" firstAttribute="top" secondItem="eyG-vI-23x" secondAttribute="bottom" constant="16" id="TP7-Sp-koP"/>
                             <constraint firstItem="lz5-lc-Qga" firstAttribute="trailing" secondItem="AIa-41-q3w" secondAttribute="trailingMargin" constant="8" id="WIv-A8-Sad"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jb9-DT-xpG" secondAttribute="trailing" constant="-20" id="XyN-wf-rqS"/>
                             <constraint firstItem="eyG-vI-23x" firstAttribute="leading" secondItem="AIa-41-q3w" secondAttribute="leadingMargin" id="dIE-ai-msV"/>
+                            <constraint firstItem="jb9-DT-xpG" firstAttribute="top" secondItem="lz5-lc-Qga" secondAttribute="top" id="fqK-If-ysa"/>
                             <constraint firstItem="lz5-lc-Qga" firstAttribute="top" secondItem="jmx-Gu-DKJ" secondAttribute="bottom" constant="8" id="h6N-27-3Rm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eyG-vI-23x" secondAttribute="trailing" id="mFc-V3-xdb"/>
+                            <constraint firstItem="zMA-2x-1Vf" firstAttribute="top" secondItem="jb9-DT-xpG" secondAttribute="bottom" id="nH8-go-6Pa"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="collectionView" destination="rqT-Fp-HD6" id="s3d-0d-oBJ"/>
+                        <outlet property="overlayView" destination="jb9-DT-xpG" id="gwx-Fe-cgC"/>
                         <outlet property="summaryTextView" destination="tcB-Zg-Dct" id="grG-xR-lK2"/>
                         <outlet property="titleLabel" destination="lz5-lc-Qga" id="zRk-0p-xcF"/>
                     </connections>
