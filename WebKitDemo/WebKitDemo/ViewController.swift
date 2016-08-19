@@ -44,7 +44,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    
+    loadHtmlPage()
+  }
+  
+  func loadHtmlPage() {
     if let url = NSURL(string: "https://www.google.com") {
       let request = NSURLRequest(URL: url)
       self.webView.loadRequest(request)

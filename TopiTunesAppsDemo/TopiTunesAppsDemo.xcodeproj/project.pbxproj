@@ -15,7 +15,18 @@
 		818EDF421D64BBD9006180B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDF401D64BBD9006180B1 /* LaunchScreen.storyboard */; };
 		818EDF6A1D64E357006180B1 /* Custom_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */; };
 		818EE0321D6650BF006180B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE0311D6650BF006180B1 /* DetailViewController.swift */; };
+		818EE04A1D674C46006180B1 /* TopiTunesAppsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE0491D674C46006180B1 /* TopiTunesAppsDemoTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		818EE04C1D674C46006180B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 818EDF2C1D64BBD8006180B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 818EDF331D64BBD8006180B1;
+			remoteInfo = TopiTunesAppsDemo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5227889A1D653FEC00675886 /* ITunesApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesApp.swift; sourceTree = "<group>"; };
@@ -28,10 +39,20 @@
 		818EDF431D64BBD9006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		818EDF691D64E357006180B1 /* Custom_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_TableViewCell.swift; sourceTree = "<group>"; };
 		818EE0311D6650BF006180B1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		818EE0471D674C46006180B1 /* TopiTunesAppsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopiTunesAppsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		818EE0491D674C46006180B1 /* TopiTunesAppsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopiTunesAppsDemoTests.swift; sourceTree = "<group>"; };
+		818EE04B1D674C46006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		818EDF311D64BBD8006180B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		818EE0441D674C46006180B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				818EDF361D64BBD8006180B1 /* TopiTunesAppsDemo */,
+				818EE0481D674C46006180B1 /* TopiTunesAppsDemoTests */,
 				818EDF351D64BBD8006180B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				818EDF341D64BBD8006180B1 /* TopiTunesAppsDemo.app */,
+				818EE0471D674C46006180B1 /* TopiTunesAppsDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +94,15 @@
 				818EE0311D6650BF006180B1 /* DetailViewController.swift */,
 			);
 			path = TopiTunesAppsDemo;
+			sourceTree = "<group>";
+		};
+		818EE0481D674C46006180B1 /* TopiTunesAppsDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				818EE0491D674C46006180B1 /* TopiTunesAppsDemoTests.swift */,
+				818EE04B1D674C46006180B1 /* Info.plist */,
+			);
+			path = TopiTunesAppsDemoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,6 +125,24 @@
 			productReference = 818EDF341D64BBD8006180B1 /* TopiTunesAppsDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		818EE0461D674C46006180B1 /* TopiTunesAppsDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 818EE04E1D674C46006180B1 /* Build configuration list for PBXNativeTarget "TopiTunesAppsDemoTests" */;
+			buildPhases = (
+				818EE0431D674C46006180B1 /* Sources */,
+				818EE0441D674C46006180B1 /* Frameworks */,
+				818EE0451D674C46006180B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				818EE04D1D674C46006180B1 /* PBXTargetDependency */,
+			);
+			name = TopiTunesAppsDemoTests;
+			productName = TopiTunesAppsDemoTests;
+			productReference = 818EE0471D674C46006180B1 /* TopiTunesAppsDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -105,6 +155,10 @@
 				TargetAttributes = {
 					818EDF331D64BBD8006180B1 = {
 						CreatedOnToolsVersion = 7.3.1;
+					};
+					818EE0461D674C46006180B1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 818EDF331D64BBD8006180B1;
 					};
 				};
 			};
@@ -122,6 +176,7 @@
 			projectRoot = "";
 			targets = (
 				818EDF331D64BBD8006180B1 /* TopiTunesAppsDemo */,
+				818EE0461D674C46006180B1 /* TopiTunesAppsDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -134,6 +189,13 @@
 				818EDF421D64BBD9006180B1 /* LaunchScreen.storyboard in Resources */,
 				818EDF3F1D64BBD9006180B1 /* Assets.xcassets in Resources */,
 				818EDF3D1D64BBD8006180B1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		818EE0451D674C46006180B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +214,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		818EE0431D674C46006180B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818EE04A1D674C46006180B1 /* TopiTunesAppsDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		818EE04D1D674C46006180B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 818EDF331D64BBD8006180B1 /* TopiTunesAppsDemo */;
+			targetProxy = 818EE04C1D674C46006180B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		818EDF3B1D64BBD8006180B1 /* Main.storyboard */ = {
@@ -281,6 +359,30 @@
 			};
 			name = Release;
 		};
+		818EE04F1D674C46006180B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TopiTunesAppsDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.disney.TopiTunesAppsDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopiTunesAppsDemo.app/TopiTunesAppsDemo";
+			};
+			name = Debug;
+		};
+		818EE0501D674C46006180B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TopiTunesAppsDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.disney.TopiTunesAppsDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopiTunesAppsDemo.app/TopiTunesAppsDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -301,6 +403,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		818EE04E1D674C46006180B1 /* Build configuration list for PBXNativeTarget "TopiTunesAppsDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				818EE04F1D674C46006180B1 /* Debug */,
+				818EE0501D674C46006180B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

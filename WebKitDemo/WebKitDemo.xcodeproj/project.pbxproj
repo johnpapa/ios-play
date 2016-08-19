@@ -12,7 +12,19 @@
 		818EDFBB1D65F566006180B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDFB91D65F566006180B1 /* Main.storyboard */; };
 		818EDFBD1D65F566006180B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818EDFBC1D65F566006180B1 /* Assets.xcassets */; };
 		818EDFC01D65F566006180B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818EDFBE1D65F566006180B1 /* LaunchScreen.storyboard */; };
+		818EE03A1D674819006180B1 /* WebKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE0391D674819006180B1 /* WebKitDemoTests.swift */; };
+		818EE0421D6748A6006180B1 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EE0411D6748A6006180B1 /* Guest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		818EE03C1D674819006180B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 818EDFAA1D65F566006180B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 818EDFB11D65F566006180B1;
+			remoteInfo = WebKitDemo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		818EDFB21D65F566006180B1 /* WebKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +34,21 @@
 		818EDFBC1D65F566006180B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		818EDFBF1D65F566006180B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		818EDFC11D65F566006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		818EE0371D674819006180B1 /* WebKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		818EE0391D674819006180B1 /* WebKitDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitDemoTests.swift; sourceTree = "<group>"; };
+		818EE03B1D674819006180B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		818EE0411D6748A6006180B1 /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		818EDFAF1D65F566006180B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		818EE0341D674819006180B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				818EDFB41D65F566006180B1 /* WebKitDemo */,
+				818EE0381D674819006180B1 /* WebKitDemoTests */,
 				818EDFB31D65F566006180B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				818EDFB21D65F566006180B1 /* WebKitDemo.app */,
+				818EE0371D674819006180B1 /* WebKitDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,8 +85,18 @@
 				818EDFBC1D65F566006180B1 /* Assets.xcassets */,
 				818EDFBE1D65F566006180B1 /* LaunchScreen.storyboard */,
 				818EDFC11D65F566006180B1 /* Info.plist */,
+				818EE0411D6748A6006180B1 /* Guest.swift */,
 			);
 			path = WebKitDemo;
+			sourceTree = "<group>";
+		};
+		818EE0381D674819006180B1 /* WebKitDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				818EE0391D674819006180B1 /* WebKitDemoTests.swift */,
+				818EE03B1D674819006180B1 /* Info.plist */,
+			);
+			path = WebKitDemoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +119,24 @@
 			productReference = 818EDFB21D65F566006180B1 /* WebKitDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		818EE0361D674819006180B1 /* WebKitDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 818EE0401D674819006180B1 /* Build configuration list for PBXNativeTarget "WebKitDemoTests" */;
+			buildPhases = (
+				818EE0331D674819006180B1 /* Sources */,
+				818EE0341D674819006180B1 /* Frameworks */,
+				818EE0351D674819006180B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				818EE03D1D674819006180B1 /* PBXTargetDependency */,
+			);
+			name = WebKitDemoTests;
+			productName = WebKitDemoTests;
+			productReference = 818EE0371D674819006180B1 /* WebKitDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +149,10 @@
 				TargetAttributes = {
 					818EDFB11D65F566006180B1 = {
 						CreatedOnToolsVersion = 7.3.1;
+					};
+					818EE0361D674819006180B1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 818EDFB11D65F566006180B1;
 					};
 				};
 			};
@@ -113,6 +170,7 @@
 			projectRoot = "";
 			targets = (
 				818EDFB11D65F566006180B1 /* WebKitDemo */,
+				818EE0361D674819006180B1 /* WebKitDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +186,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		818EE0351D674819006180B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,10 +202,27 @@
 			files = (
 				818EDFB81D65F566006180B1 /* ViewController.swift in Sources */,
 				818EDFB61D65F566006180B1 /* AppDelegate.swift in Sources */,
+				818EE0421D6748A6006180B1 /* Guest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		818EE0331D674819006180B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818EE03A1D674819006180B1 /* WebKitDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		818EE03D1D674819006180B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 818EDFB11D65F566006180B1 /* WebKitDemo */;
+			targetProxy = 818EE03C1D674819006180B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		818EDFB91D65F566006180B1 /* Main.storyboard */ = {
@@ -269,6 +351,30 @@
 			};
 			name = Release;
 		};
+		818EE03E1D674819006180B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WebKitDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.disney.WebKitDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebKitDemo.app/WebKitDemo";
+			};
+			name = Debug;
+		};
+		818EE03F1D674819006180B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WebKitDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.disney.WebKitDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebKitDemo.app/WebKitDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -286,6 +392,15 @@
 			buildConfigurations = (
 				818EDFC51D65F566006180B1 /* Debug */,
 				818EDFC61D65F566006180B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		818EE0401D674819006180B1 /* Build configuration list for PBXNativeTarget "WebKitDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				818EE03E1D674819006180B1 /* Debug */,
+				818EE03F1D674819006180B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
