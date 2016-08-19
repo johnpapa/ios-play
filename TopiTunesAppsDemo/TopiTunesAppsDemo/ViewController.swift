@@ -26,7 +26,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     apps = []
     
     // http://rss.itunes.apple.com/us/?urlDesc=%2Fgenerator
-    let url = NSURL(string: "https://itunes.apple.com/us/rss/topgrossingapplications/limit=\(limit)/json")!
+    // toppaidapplications
+    // topgrossingapplications
+    let url = NSURL(string: "https://itunes.apple.com/us/rss/toppaidapplications/limit=\(limit)/json")!
     
     let session = NSURLSession.sharedSession()
     
@@ -188,7 +190,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //title
     appcell.appTitle?.text = apps[idx].title
     //price
-    let p = apps[idx].price == 0.0 ? "Free" : String(apps[idx].price)
+    let p = apps[idx].price == 0.0 ? "Free" : "$" + String(apps[idx].price)
     appcell.appPrice?.text = p
     //developer
     appcell.appDeveloper?.text = apps[idx].developer
