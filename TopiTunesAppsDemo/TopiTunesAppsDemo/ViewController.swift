@@ -184,8 +184,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let appcell = tableView.dequeueReusableCellWithIdentifier("customcell", forIndexPath: indexPath) as! Custom_TableViewCell
     
     let idx: Int = indexPath.row
-    let appname = apps[idx].title // TODO: check for null
-    print(appname)
 
     //title
     appcell.appTitle?.text = apps[idx].title
@@ -194,23 +192,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     appcell.appPrice?.text = p
     //developer
     appcell.appDeveloper?.text = apps[idx].developer
-    let url: String = (NSURL(string: apps[idx].imageUrl)?.absoluteString)!
+    // image
+    displayAppImage(idx, appcell: appcell)
     
-    // Get the image url
+    return appcell
+  }
+  
+  func displayAppImage(row: Int, appcell: Custom_TableViewCell) {
+    let url: String = (NSURL(string: apps[row].imageUrl)?.absoluteString)!
     NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!, completionHandler: { (data, response, error) -> Void in
       if error != nil {
         print(error)
         return
       }
       
-      dispatch_async(dispatch_get_main_queue(), { // () -> Void in
+      dispatch_async(dispatch_get_main_queue(), {
         let image = UIImage(data: data!)
         appcell.appImageView?.image = image
         //        appcell.layoutSubviews() // We don't need this here, but if we have rendering issues, we can
       })
     }).resume()
-    
-    return appcell
   }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
