@@ -85,13 +85,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the title of the iTunes app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-H3-DIr">
-                                                    <rect key="frame" x="90" y="30" width="198" height="21"/>
+                                                    <rect key="frame" x="90" y="18" width="198" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ht3-1x-dCR">
-                                                    <rect key="frame" x="105" y="50" width="183" height="14.5"/>
+                                                    <rect key="frame" x="105" y="38" width="183" height="14.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="183" id="upB-zw-GxY"/>
                                                     </constraints>
@@ -104,7 +104,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbi-RQ-u4A">
-                                                    <rect key="frame" x="105" y="66" width="183" height="15"/>
+                                                    <rect key="frame" x="105" y="54" width="183" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -125,7 +125,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="cbi-RQ-u4A" secondAttribute="trailing" constant="24" id="dfy-hK-EE4"/>
                                                 <constraint firstItem="qZr-H3-DIr" firstAttribute="leading" secondItem="bZK-Me-ZDg" secondAttribute="trailing" constant="8" id="iQI-lJ-TZL"/>
                                                 <constraint firstItem="cbi-RQ-u4A" firstAttribute="top" secondItem="Ht3-1x-dCR" secondAttribute="bottom" constant="1.5" id="mRf-kQ-g7y"/>
-                                                <constraint firstItem="qZr-H3-DIr" firstAttribute="top" secondItem="etH-Fb-UHj" secondAttribute="topMargin" constant="22" id="pZa-zf-LeY"/>
+                                                <constraint firstItem="qZr-H3-DIr" firstAttribute="top" secondItem="etH-Fb-UHj" secondAttribute="topMargin" constant="10" id="pZa-zf-LeY"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qZr-H3-DIr" secondAttribute="trailing" constant="24" id="qZd-NO-6oN"/>
                                                 <constraint firstItem="bZK-Me-ZDg" firstAttribute="top" secondItem="etH-Fb-UHj" secondAttribute="topMargin" constant="8" id="vjv-8S-WD8"/>
                                                 <constraint firstItem="qZr-H3-DIr" firstAttribute="leading" secondItem="bZK-Me-ZDg" secondAttribute="trailing" constant="24" id="wSN-pM-VHb"/>
