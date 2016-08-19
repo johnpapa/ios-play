@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="81" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="K1z-h3-GBV">
-                                <rect key="frame" x="0.0" y="64" width="320" height="419"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="483"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customcell" rowHeight="81" id="oif-Rb-9Bl" customClass="Custom_TableViewCell" customModule="TopiTunesAppsDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="114" width="320" height="81"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="320" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oif-Rb-9Bl" id="etH-Fb-UHj">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bZK-Me-ZDg">
@@ -78,8 +78,8 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nHm-XY-0xt">
                                         <rect key="frame" x="145" y="266" width="37" height="37"/>
                                     </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loading . . ." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZb-31-a53">
-                                        <rect key="frame" x="113" y="311" width="101" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading . . ." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZb-31-a53">
+                                        <rect key="frame" x="116.5" y="311" width="94" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -127,10 +127,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RR6-d8-AFE" secondAttribute="bottom" constant="10" id="3hm-cr-kE8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RR6-d8-AFE" secondAttribute="trailing" id="9py-r2-gEg"/>
                             <constraint firstItem="U3S-Y2-b3k" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="FFC-fk-zKL"/>
+                            <constraint firstItem="K1z-h3-GBV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Hcb-uS-uFj"/>
                             <constraint firstItem="K1z-h3-GBV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RaU-mU-0Sq"/>
                             <constraint firstItem="K1z-h3-GBV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UAR-Wi-vhq"/>
                             <constraint firstAttribute="leadingMargin" secondItem="RR6-d8-AFE" secondAttribute="leading" id="YuT-8P-D8o"/>
-                            <constraint firstItem="K1z-h3-GBV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bbf-UB-jnp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U3S-Y2-b3k" secondAttribute="trailing" constant="-20" id="mp7-Nc-W4L"/>
                             <constraint firstItem="U3S-Y2-b3k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ssI-Ig-HGW"/>
                             <constraint firstItem="RR6-d8-AFE" firstAttribute="top" secondItem="K1z-h3-GBV" secondAttribute="bottom" constant="46" id="ttM-Wk-Doj"/>
