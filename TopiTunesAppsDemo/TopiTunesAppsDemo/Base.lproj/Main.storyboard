@@ -22,7 +22,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nHm-XY-0xt">
-                                        <rect key="frame" x="145.5" y="265" width="37" height="37"/>
+                                        <rect key="frame" x="145" y="265" width="37" height="37"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading …" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZb-31-a53">
                                         <rect key="frame" x="122" y="310" width="84.5" height="21"/>
@@ -49,21 +49,11 @@
                                         </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6P-5x-DDC">
-                                        <rect key="frame" x="114" y="0.0" width="54" height="29"/>
+                                        <rect key="frame" x="114" y="0.0" width="174" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-uv-6gH">
-                                        <rect key="frame" x="188" y="0.0" width="100" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="je2-jK-MJw"/>
-                                        </constraints>
-                                        <state key="normal" title="Get Apps"/>
-                                        <connections>
-                                            <action selector="getDataButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggc-cI-2xt"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="94" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="K1z-h3-GBV">

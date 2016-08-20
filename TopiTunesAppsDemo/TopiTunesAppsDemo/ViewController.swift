@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   var apps: [ITunesApp] = []
   var limit: Int = 10 // default
+  let refreshControl = UIRefreshControl()
   
   @IBOutlet var overlayView: UIView!
   @IBOutlet var tableView: UITableView!
@@ -22,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     limitLabel.text = String(limit)
   }
   
-  @IBAction func getDataButton(sender: UIButton) {
+  func getITunesData() {
     apps = []
     
     // http://rss.itunes.apple.com/us/?urlDesc=%2Fgenerator
@@ -41,26 +42,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
           return
         }
         
-        do {
-          let httpResponse = response as! NSHTTPURLResponse
-          let statusCode = httpResponse.statusCode
-          if (statusCode == 200) {
-            let possibleJson = JSONParser.parseJson(data)
-            if let json = possibleJson {
-              guard let dict = json["feed"] as? NSDictionary else { return }
-              guard let entries = dict["entry"] as? NSArray else { return }
-              
-              for entry in entries {
-                // Loop through the crap and create apps
-                guard let e =  entry as? NSDictionary else { continue }
-                let iTunesApp = self.parseAndCreateITunesApp(e)
-                self.apps.append(iTunesApp!)
-              }
-              
-              dispatch_async(dispatch_get_main_queue()) {
-                self.tableView.reloadData()
-                self.overlayView.hidden = true
-              }
+        let httpResponse = response as! NSHTTPURLResponse
+        let statusCode = httpResponse.statusCode
+        if (statusCode == 200) {
+          let possibleJson = JSONParser.parseJson(data)
+          if let json = possibleJson {
+            guard let dict = json["feed"] as? NSDictionary,
+              entries = dict["entry"] as? NSArray else {
+              self.overlayView.hidden = true
+              return
+            }
+          
+            for entry in entries {
+              guard let e =  entry as? NSDictionary else { continue }
+              let iTunesApp = self.parseAndCreateITunesApp(e)
+              self.apps.append(iTunesApp!)
+            }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+              self.tableView.reloadData()
+              self.overlayView.hidden = true
             }
           }
         }
@@ -122,10 +123,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   override func viewDidLoad() {
     super.viewDidLoad()
     self.overlayView.hidden = true
+    
     stepper.value = Double(limit)
     limitLabel.text = String(limit)
     tableView.estimatedRowHeight = 44.0
     tableView.rowHeight = UITableViewAutomaticDimension
+//    refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    refreshControl.addTarget(self, action: #selector(refresh), forControlEvents: .ValueChanged)
+    tableView.addSubview(refreshControl) // not required when using UITableViewController
+    getITunesData()
+  }
+  
+  func refresh(sender:AnyObject)
+  {
+    getITunesData()
+    dispatch_async(dispatch_get_main_queue(), {
+      self.tableView.reloadData()
+    })
+    self.refreshControl.endRefreshing()
   }
   
   override func didReceiveMemoryWarning() {

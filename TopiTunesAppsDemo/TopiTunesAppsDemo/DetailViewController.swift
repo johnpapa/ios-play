@@ -51,8 +51,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         do {
           let httpResponse = response as! NSHTTPURLResponse
-          let statusCode = httpResponse.statusCode
-          if (statusCode == 200) {
+          if (httpResponse.statusCode == 200) {
             let possibleJson = JSONParser.parseJson(data)
             if let json = possibleJson {
               guard let results = json["results"] as? NSArray else { return }
