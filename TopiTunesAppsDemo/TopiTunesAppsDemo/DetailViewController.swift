@@ -8,7 +8,8 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+  
   var getData: (() -> (ITunesApp))?
   var iTunesApp: ITunesApp? = nil
   
@@ -59,8 +60,7 @@ class DetailViewController: UIViewController {
               
               dispatch_async(dispatch_get_main_queue()) {
                 for url in screenshotUrls {
-                  //TODO: load the images
-                  print(url)
+                  self.iTunesApp!.screenshotUrls.append(url as! String)
                 }
                 self.collectionView.reloadData()
                 self.overlayView.hidden = true
@@ -70,18 +70,70 @@ class DetailViewController: UIViewController {
         }
       }
       else if let error = error {
-        let message = "unable to load the apps. \(error.localizedDescription)"
-//        self.displayAlertView(message)
+        let message = "unable to load the screenshots. \(error.localizedDescription)"
+        self.displayAlertView(message)
       }
     }
     task.resume()
   }
   
+  func displayAlertView(message: String) {
+    let alertVC = UIAlertController(title: "error loading",
+                                    message: message,
+                                    preferredStyle: .Alert)
+    let ok = UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
+      NSLog("Ok pressed")
+    })
+    alertVC.addAction(ok)
+    self.presentViewController(alertVC, animated: true, completion: nil)
+    dispatch_async(dispatch_get_main_queue()) {
+      self.overlayView.hidden = true
+    }
+  }
+
+  func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return self.iTunesApp!.screenshotUrls.count
+  }
+  
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("screenshotCell", forIndexPath: indexPath) as! ScreenshotCollectionViewCell
+    displayAppImage(indexPath.item, cell: cell)
+    return cell
+  }
+  
+  override func viewWillLayoutSubviews() {
+    collectionView.collectionViewLayout.invalidateLayout()
+  }
+  
+  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("screenshotCell", forIndexPath: indexPath) as! ScreenshotCollectionViewCell
+//    let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+    return CGSize(width: collectionView.bounds.size.height, height: collectionView.bounds.size.height)
+  }
+  
+  func displayAppImage(row: Int, cell: ScreenshotCollectionViewCell) {
+    let url: String = (NSURL(string: self.iTunesApp!.screenshotUrls[row])?.absoluteString)!
+    NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!, completionHandler: { (data, response, error) -> Void in
+      if error != nil {
+        print("error getting screenshot image data: \(error)")
+        return
+      }
+      
+      dispatch_async(dispatch_get_main_queue(), {
+        let image = UIImage(data: data!)
+        cell.screenshotImage.image = image
+      })
+    }).resume()
+  }
+
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-  
   
   /*
    // MARK: - Navigation

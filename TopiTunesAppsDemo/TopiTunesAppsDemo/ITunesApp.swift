@@ -15,6 +15,7 @@ class ITunesApp {
   var summary: String = ""
   var price: Double = 0.0
   var developer: String = ""
+  var screenshotUrls: [String] = []
   
   init(id: String, title: String, imageUrl: String, summary: String, price: Double, developer: String) {
     self.id = id
